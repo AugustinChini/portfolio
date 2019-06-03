@@ -2,13 +2,14 @@ import React from 'react';
 
 import NavBar from './navBar/navBar'
 
-import logo from '../assets/img/logo.png';
 import './app.css';
+import Home from './home/home';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <NavBar/>
+      <Home/>
     </div>
   );
 }
