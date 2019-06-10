@@ -19,8 +19,8 @@ class NavBar extends Component {
   trianglifyOptions: any = {
     width: 0,
     height: 0,
-    cell_size: 60, //30 - 50
-    variance: 0.30, //0.30 - 0.80 
+    cell_size: 60,
+    variance: 0.30,
     x_colors: ['#212121', '#383838', '#a3a3a3', '#c9c9c9'],
     y_colors: 'match_x',
     seed: "123"
@@ -115,7 +115,7 @@ class NavBar extends Component {
         <div id="dyn-bgd">
           <canvas id="bgd-canvas" className="shadow"></canvas>
         </div>
-        <a><img src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></a>
+        <a className="link"><img src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></a>
         <div className="linkContainer">
           {/* Mobile hamburger menu */}
           <div id="menuToggle">

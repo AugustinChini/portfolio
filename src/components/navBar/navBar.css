@@ -6,7 +6,7 @@
 }
 
 .linkContainer {
-    width: calc(100% - 484px);
+    width: calc(100% - 30%);
     margin-left: 30%;
     font-size: 35px;
     padding-top: 50px;
@@ -20,7 +20,7 @@
     text-shadow: 2px 2px 10px #494949;
 }
 
-.linkContainer a:hover {
+.link:hover {
     font-size: 40px;
     text-shadow: 2px 2px 10px #cacaca;
     -webkit-transition: all 1s ease-out;
@@ -41,6 +41,15 @@
     position: absolute;
     top: 32px;
     left: 195px;
+}
+
+.navBarLogo:hover {
+    height: 100px;
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
 }
 
 
@@ -159,12 +168,14 @@
 
 @media screen and (max-width: 1425px) {
     .linkContainer {
+        width: calc(100% - 35%);
         margin-left: 35%;
     }
 }
 
 @media screen and (max-width: 1155px) {
     .linkContainer {
+        width: calc(100% - 45%);
         margin-left: 45%;
     }
 }

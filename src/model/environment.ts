@@ -23,7 +23,7 @@ export interface Section {
 export interface Home {
     title: string;
     welcome: string;
-    welcomePicture: string;
+    highlight: string;
     sections: Section[];
 }
 
