@@ -14,18 +14,24 @@ class Home extends Component {
 	private createSections() {
 		let sections: Array<any> = [];
 
-		environment.initConfig.home.sections.forEach((section: Section) => {
+		environment.initConfig.home.sections.forEach((section: Section, index: number) => {
+			let isOdd: boolean = this.isOdd(index);
 			sections.push(
-				<div>
-					<div className="sectionsContainer whiteBgrd">
-						<div className="imgContainer">
-							<img src={section.picture} alt={section.alt} />
-						</div>
-						<div className="descriptionContainer">
-							<p>{section.description}</p>
-						</div>
-						<div className="insideTriangle"></div>
+				<div className="sectionsContainer whiteBgrd">
+					<div className={"imgContainer " + ( isOdd ? "" : "floatRight")}>
+						<img src={section.picture} alt={section.alt} />
 					</div>
+
+					<div className={"descriptionContainer " + ( isOdd ? "" : "floatRight")}>
+						<div className="verticalAlignedContainer">
+							<div>
+								<p>{section.description}</p>
+
+							</div>
+						</div>
+					</div>
+
+					<div className={"insideTriangle " + ( isOdd ? "" : "floatRight rot90")}></div>
 				</div>
 			)
 		});
@@ -33,7 +39,12 @@ class Home extends Component {
 		return sections;
 	}
 
-	render() {
+	private isOdd(n: number): boolean {
+		++n; // we're dealing with table index so we add 1 to haven't 0
+		return n === 0 || !!(n && (n % 2))
+	}
+
+	public render() {
 		return (
 			<div className="container">
 

@@ -31,6 +31,14 @@
     float: left;
     text-align: center;
     margin-left: 50px;
+    display: table;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.verticalAlignedContainer {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .imgContainer {
@@ -49,7 +57,7 @@
     border-bottom: 50px solid #feae17;
     border-left: 50px solid #ffffff;
     float: right;
-    margin-top: -90px;
+    margin-top: 170px;
 }
 
 .alternativeBgrd {
