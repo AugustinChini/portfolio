@@ -1,0 +1,27 @@
+.footerLine {
+    height: 10px;
+    background-color: #feae17;
+}
+
+.footerContainer {
+    width: 100%;
+    height: 200px;
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+.siteMapContainer {
+    width: 25%;
+    float: left;
+}
+
+.contactContainer {
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+
+.signatureContainer {
+    width: 25%;
+    float: right;
+}

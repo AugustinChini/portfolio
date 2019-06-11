@@ -31,7 +31,7 @@ class Home extends Component {
 						</div>
 					</div>
 
-					<div className={"insideTriangle " + ( isOdd ? "" : "floatRight rot90")}></div>
+					<div className={"insideTriangle " + ( isOdd ? "" : "floatLeft rot90")}></div>
 				</div>
 			)
 		});

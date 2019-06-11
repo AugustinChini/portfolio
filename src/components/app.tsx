@@ -1,15 +1,17 @@
 import React from 'react';
 
 import NavBar from './navBar/navBar'
+import Home from './home/home';
+import Footer from './footer/footer';
 
 import './app.css';
-import Home from './home/home';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <NavBar/>
       <Home/>
+      <Footer/>
     </div>
   );
 }
