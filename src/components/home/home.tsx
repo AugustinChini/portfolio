@@ -56,7 +56,7 @@ class Home extends Component {
 					</div>
 					<p>{environment.initConfig.home.welcome}</p>
 				</div>
-				<div className="orangeBgrd">
+				<div className="sectionsWrapper orangeBgrd">
 					{this.createSections()}
 				</div>
 			</div >

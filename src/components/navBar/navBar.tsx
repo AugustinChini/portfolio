@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
+
+
 import { environment } from '../../environment'
-import { Link } from '../../model/environment'
+import { Link as LinkModel } from '../../model/environment'
 import navBarLogo from '../../assets/img/logo.png'
 import Trianglify from 'trianglify';
 import './navBar.css';
@@ -10,7 +13,7 @@ class NavBar extends Component {
   // Main banner logo path
   logo: string = environment.initConfig.navBar.logo;
   // Array of the links in the banner
-  links: Link[] = environment.initConfig.navBar.links;
+  links: LinkModel[] = environment.initConfig.navBar.links;
   // Operation to make with the variance variable - "add" OR "minus"
   cell_varianceOperation: string = "add";
   // DOM canvas animation ref.
@@ -115,7 +118,7 @@ class NavBar extends Component {
         <div id="dyn-bgd">
           <canvas id="bgd-canvas" className="shadow"></canvas>
         </div>
-        <a className="link"><img src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></a>
+        <Link className="link" to="/"><img src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></Link>
         <div className="linkContainer">
           {/* Mobile hamburger menu */}
           <div id="menuToggle">
@@ -126,9 +129,9 @@ class NavBar extends Component {
           </div>
           {/* END Mobile hamburger menu */}
           <div className={!this.state.isMobileMenuActive && this.state.isSmallScreen  ? 'linkCenterContainer hide' : 'linkCenterContainer'}>
-            <a className="link">Accueil</a>
-            <a className="link">CV</a>
-            <a className="link">Realisations</a>
+            <Link className="link" to="/">Home</Link>
+            <Link className="link" to="/cv">CV</Link>
+            <Link className="link" to="/realisations">Realisations</Link>
           </div>
         </div>
       </div >

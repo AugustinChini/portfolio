@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
-import './realisation.css';
+import './realisations.css';
 
 class Realisations extends Component {
 	render() {
 		return (
 			<div>
 				<h3>reaTitle</h3>
-				<div class="sectionsBarContainer">
+				<div className="sectionsBarContainer">
 					<div>
 						<img />
-						<a class="imgLink">section.displayName</a>
+						<a className="imgLink">section.displayName</a>
 					</div>
-					<div class="projectsBarContainer">
+					<div className="projectsBarContainer">
 						<div>
 							<img />
 							<h3>project.title</h3>
 						</div>
 					</div>
-					<div class="projectContainer">
+					<div className="projectContainer">
 					</div>
 				</div>
 			</div>
