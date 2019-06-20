@@ -7,7 +7,6 @@ import { Link as LinkModel } from '../../model/environment'
 import navBarLogo from '../../assets/img/logo.png'
 import Trianglify from 'trianglify';
 import './navBar.css';
-import Contact from '../contact/contact';
 
 class NavBar extends Component {
 
@@ -135,7 +134,6 @@ class NavBar extends Component {
             <Link className="link" to="/realisations">Realisations</Link>
           </div>
         </div>
-        <Contact/>
       </div >
     );
   }

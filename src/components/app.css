@@ -20,8 +20,19 @@
     color: white;
 }
 
+.pageContainer {
+    margin-top: 200px;
+}
+
 .App-link {
     color: #61dafb;
+}
+
+.contactLink {
+    position: absolute;
+    right: 0;
+    top: 140px;
+    z-index: 1;
 }
 
 @keyframes App-logo-spin {

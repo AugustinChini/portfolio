@@ -1,4 +1,24 @@
 .contactButton {
+    -moz-box-shadow: 3px 5px 4px -1px #949494;
+    -webkit-box-shadow: 3px 5px 4px -1px #949494;
+    box-shadow: 3px 5px 4px -1px #949494;
+    -moz-border-radius: 0 0 20px 20px;
     -webkit-border-radius: 0 0 20px 20px;
     border-radius: 0 0 20px 20px;
+    border: 1px solid #a8a8a8;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 16px 31px;
+    text-decoration: none;
+    text-shadow: 0px 0px 7px #303030;
+}
+
+.myButton:hover {
+    background-color: #ffffff;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
 }
