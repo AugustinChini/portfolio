@@ -45,6 +45,7 @@ class NavBar extends Component {
     }
 
     window.onresize = () => { this.setScreenWidth(); };
+    window.onscroll = () => { this.scrollFunction() };
 
   }
 
@@ -112,9 +113,22 @@ class NavBar extends Component {
     }
   }
 
+  
+
+scrollFunction() {
+  let navBarElt = document.getElementById("navbar");
+  let logoElt = "toto"
+
+  if ( (navBarElt && logoElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ) {
+    navBarElt.style.height = "70px";
+  } else if (navBarElt && logoElt) {
+    navBarElt.style.height = "150px";
+  }
+}
+
   render() {
     return (
-      <div className={this.state.isMobileMenuActive ? 'navBarContainer white orangeBgrd shadow expand' : 'navBarContainer white orangeBgrd shadow'}>
+      <div id="navbar" className={this.state.isMobileMenuActive ? 'navBarContainer white orangeBgrd shadow expand' : 'navBarContainer white orangeBgrd shadow'}>
         <div id="dyn-bgd">
           <canvas id="bgd-canvas" className="shadow"></canvas>
         </div>

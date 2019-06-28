@@ -17,7 +17,7 @@ class Home extends Component {
 		environment.initConfig.home.sections.forEach((section: Section, index: number) => {
 			let isOdd: boolean = this.isOdd(index);
 			sections.push(
-				<div className="sectionsContainer whiteBgrd">
+				<div className={"sectionsContainer whiteBgrd" + ( isOdd ? "" : " rightShadow")}>
 					<div className={"imgContainer " + ( isOdd ? "" : "floatRight")}>
 						<img src={section.picture} alt={section.alt} />
 					</div>
