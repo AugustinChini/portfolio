@@ -46,6 +46,7 @@
     position: absolute;
     top: 32px;
     left: 195px;
+    transition: 0.4s;
 }
 
 .navBarLogo:hover {
@@ -71,6 +72,7 @@
     -moz-transform: rotate(-20deg);
     -webkit-transform: rotate(-15deg);
     -o-transform: rotate(-20deg);
+    transition: 0.4s;
 }
 
 

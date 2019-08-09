@@ -117,12 +117,21 @@ class NavBar extends Component {
 
 scrollFunction() {
   let navBarElt = document.getElementById("navbar");
-  let logoElt = "toto"
+  let canevasElt = document.getElementById("dyn-bgd");
+  let navBarLogoElt = document.getElementById("navBarLogo");
 
-  if ( (navBarElt && logoElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ) {
+  if ( (navBarElt && canevasElt && navBarLogoElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ) {
     navBarElt.style.height = "70px";
-  } else if (navBarElt && logoElt) {
+    canevasElt.style.top = "-148px";
+    navBarLogoElt.style.height = "65px";
+    navBarLogoElt.style.top = "3px";
+    navBarLogoElt.style.left = "115px";
+  } else if (navBarElt && canevasElt && navBarLogoElt) {
+    canevasElt.style.top = "-68px"
     navBarElt.style.height = "150px";
+    navBarLogoElt.style.height = "90px";
+    navBarLogoElt.style.top = "32px";
+    navBarLogoElt.style.left = "195px";
   }
 }
 
@@ -132,7 +141,7 @@ scrollFunction() {
         <div id="dyn-bgd">
           <canvas id="bgd-canvas" className="shadow"></canvas>
         </div>
-        <Link className="link" to="/"><img src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></Link>
+        <Link className="link" to="/"><img id="navBarLogo" src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></Link>
         <div className="linkContainer">
           {/* Mobile hamburger menu */}
           <div id="menuToggle">
