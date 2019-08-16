@@ -21,7 +21,7 @@
 }
 
 .pageContainer {
-    margin-top: 200px;
+    margin-top: 240px;
 }
 
 .App-link {
@@ -29,10 +29,11 @@
 }
 
 .contactLink {
-    position: absolute;
+    position: fixed;
     right: 0;
-    top: 140px;
+    bottom: 20px;
     z-index: 1;
+    right: 50px;
 }
 
 @keyframes App-logo-spin {

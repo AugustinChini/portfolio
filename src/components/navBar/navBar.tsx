@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
-
+import { Utils } from '../../services/utils'
 import { environment } from '../../environment'
 import { Link as LinkModel } from '../../model/environment'
 import navBarLogo from '../../assets/img/logo.png'
@@ -44,11 +44,19 @@ class NavBar extends Component {
       isMobileMenuActive: false
     }
 
-    window.onresize = () => { this.setScreenWidth(); };
+    // init resize listener for the mobile version
+    window.onresize = Utils.debounce( () => {
+      this.setScreenWidth();
+    }, 500);
     window.onscroll = () => { this.scrollFunction() };
 
+    // Bind the hamburger button chekbox
+    this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
   }
 
+  /**
+   * Called immediately after a component is mounted. Setting state here will trigger re-rendering.
+   */
   componentDidMount() {
     let dynBgdElement = document.getElementById("dyn-bgd")
 
@@ -68,10 +76,17 @@ class NavBar extends Component {
     this.setScreenWidth();
   }
 
+  /**
+   * Called immediately before a component is destroyed. Perform any necessary cleanup in this method, 
+   * such as cancelled network requests, or cleaning up any DOM elements created in componentDidMount.
+   */
   componentWillUnmount() {
     clearInterval(this.canvasInterval);
   }
 
+  /**
+   * Refresh the canvas animation
+   */
   refreshCanvas() {
     if (!this.trianglifyOptions.variance) this.trianglifyOptions.variance = 2;
 
@@ -91,6 +106,9 @@ class NavBar extends Component {
     this.trianglifyPattern.canvas(this.bgdCanvas);
   }
 
+  /**
+   * Set the component State in function of the screen size (tigger Mobile mode) 
+   */
   toggleMobileMenu() {
     if (this.state.isMobileMenuActive)
       this.setState({ isMobileMenuActive: false });
@@ -98,6 +116,9 @@ class NavBar extends Component {
       this.setState({ isMobileMenuActive: true });
   }
 
+  /**
+   * Set the componemt State with the type of screen (swall/large)
+   */
   setScreenWidth() {
     var screenWidth = window.innerWidth
       || document.documentElement.clientWidth
@@ -109,32 +130,44 @@ class NavBar extends Component {
     } else {
       state.isSmallScreen = false;
       state.isMobileMenuActive = false;
+
       this.setState(state);
     }
   }
 
-  
+  /**
+   * Refresh the narBar state in function of the screen size
+   */
+  scrollFunction() {
+    let navBarElt = document.getElementById("navbar");
+    let canevasElt = document.getElementById("dyn-bgd");
+    let navBarLogoElt = document.getElementById("navBarLogo");
+    let linkContainerElt = document.getElementById("linkContainer");
+    let menuToggleElt = document.getElementById("menuToggle");
 
-scrollFunction() {
-  let navBarElt = document.getElementById("navbar");
-  let canevasElt = document.getElementById("dyn-bgd");
-  let navBarLogoElt = document.getElementById("navBarLogo");
-
-  if ( (navBarElt && canevasElt && navBarLogoElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ) {
-    navBarElt.style.height = "70px";
-    canevasElt.style.top = "-148px";
-    navBarLogoElt.style.height = "65px";
-    navBarLogoElt.style.top = "3px";
-    navBarLogoElt.style.left = "115px";
-  } else if (navBarElt && canevasElt && navBarLogoElt) {
-    canevasElt.style.top = "-68px"
-    navBarElt.style.height = "150px";
-    navBarLogoElt.style.height = "90px";
-    navBarLogoElt.style.top = "32px";
-    navBarLogoElt.style.left = "195px";
+    // TODO use a CSS class instead
+    if ( (navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ) {
+      navBarElt.style.height = "70px";
+      canevasElt.style.top = "-148px";
+      navBarLogoElt.style.height = "65px";
+      navBarLogoElt.style.top = "3px";
+      navBarLogoElt.style.left = "115px";
+      linkContainerElt.style.paddingTop = "15px";
+      menuToggleElt.style.top = "40px";
+    } else if (navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) {
+      canevasElt.style.top = "-68px"
+      navBarElt.style.height = "150px";
+      navBarLogoElt.style.height = "90px";
+      navBarLogoElt.style.top = "32px";
+      navBarLogoElt.style.left = "195px";
+      linkContainerElt.style.paddingTop = "60px";
+      menuToggleElt.style.top = "50px";
+    }
   }
-}
 
+  /**
+   * Render the component template
+   */
   render() {
     return (
       <div id="navbar" className={this.state.isMobileMenuActive ? 'navBarContainer white orangeBgrd shadow expand' : 'navBarContainer white orangeBgrd shadow'}>
@@ -142,10 +175,10 @@ scrollFunction() {
           <canvas id="bgd-canvas" className="shadow"></canvas>
         </div>
         <Link className="link" to="/"><img id="navBarLogo" src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></Link>
-        <div className="linkContainer">
+        <div id="linkContainer">
           {/* Mobile hamburger menu */}
           <div id="menuToggle">
-            <input onClick={() => this.toggleMobileMenu()} checked={this.state.isMobileMenuActive} type="checkbox" />
+            <input onChange={this.toggleMobileMenu} checked={this.state.isMobileMenuActive} type="checkbox" />
             <span></span>
             <span></span>
             <span></span>

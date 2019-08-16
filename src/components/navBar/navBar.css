@@ -5,14 +5,14 @@
     cursor: pointer;
 }
 
-.linkContainer {
+#linkContainer {
     width: calc(100% - 30%);
     margin-left: 30%;
     font-size: 35px;
-    padding-top: 50px;
+    padding-top: 60px;
 }
 
-.linkContainer a {
+#linkContainer a {
     float: left;
     text-align: center;
     width: 30%;
@@ -167,21 +167,21 @@
 }
 
 .expand {
-    height: 345px;
+    height: 345px !important;
 }
 
 
 /* media queries*/
 
 @media screen and (max-width: 1425px) {
-    .linkContainer {
+    #linkContainer {
         width: calc(100% - 35%);
         margin-left: 35%;
     }
 }
 
 @media screen and (max-width: 1155px) {
-    .linkContainer {
+    #linkContainer {
         width: calc(100% - 45%);
         margin-left: 45%;
     }
@@ -201,11 +201,11 @@
         display: block;
         margin-right: 80px;
     }
-    .linkContainer {
+    #linkContainer {
         width: 100%;
         margin: 0;
     }
-    .linkContainer a {
+    #linkContainer a {
         display: block;
         width: 100%;
         height: 50px;
