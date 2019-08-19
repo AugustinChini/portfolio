@@ -7,9 +7,11 @@ import { Link as LinkModel } from '../../model/environment'
 import navBarLogo from '../../assets/img/logo.png'
 import Trianglify from 'trianglify';
 import './navBar.css';
+import { NavbarEvent } from '../../model/NavbarEvent';
 
 class NavBar extends Component {
 
+  props: { onChange: (event: NavbarEvent) => void };
   // Main banner logo path
   logo: string = environment.initConfig.navBar.logo;
   // Array of the links in the banner
@@ -32,23 +34,28 @@ class NavBar extends Component {
   canvasInterval: any;
   // screen width
   isSmallScreen: boolean = false;
+  // scroll bar reach the bottom
+  isScrollBottom: boolean = false;
   // component state
   state: any;
 
   // Create Trianglify instance
   trianglifyPattern: any;
 
-  constructor(props: any) {
+  constructor(props: { onChange: (event: NavbarEvent) => void }) {
     super(props);
+    this.props = props;
     this.state = {
       isMobileMenuActive: false
     }
 
     // init resize listener for the mobile version
-    window.onresize = Utils.debounce( () => {
+    window.onresize = Utils.debounce(() => {
       this.setScreenWidth();
     }, 500);
-    window.onscroll = () => { this.scrollFunction() };
+    window.onscroll = Utils.debounce(() => {
+      this.scrollFunction()
+    });
 
     // Bind the hamburger button chekbox
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -74,6 +81,11 @@ class NavBar extends Component {
     }, 80);
 
     this.setScreenWidth();
+    this.props.onChange({
+      isScrollTop: true,
+      isSmalScreen: this.isSmallScreen,
+      isScrollBottom: this.isScrollBottom
+    })
   }
 
   /**
@@ -145,8 +157,15 @@ class NavBar extends Component {
     let linkContainerElt = document.getElementById("linkContainer");
     let menuToggleElt = document.getElementById("menuToggle");
 
+    // test if the scrollbar reach the bottom
+    if (Utils.getDocHeight() == Utils.getScrollXY()[1] + window.innerHeight) {
+      this.isScrollBottom = true;
+    } else {
+      this.isScrollBottom = false;
+    }
+
     // TODO use a CSS class instead
-    if ( (navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) ) {
+    if ((navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80)) {
       navBarElt.style.height = "70px";
       canevasElt.style.top = "-148px";
       navBarLogoElt.style.height = "65px";
@@ -154,6 +173,11 @@ class NavBar extends Component {
       navBarLogoElt.style.left = "115px";
       linkContainerElt.style.paddingTop = "15px";
       menuToggleElt.style.top = "40px";
+      this.props.onChange({
+        isSmalScreen: this.isSmallScreen,
+        isScrollTop: false,
+        isScrollBottom: this.isScrollBottom
+      });
     } else if (navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) {
       canevasElt.style.top = "-68px"
       navBarElt.style.height = "150px";
@@ -162,6 +186,11 @@ class NavBar extends Component {
       navBarLogoElt.style.left = "195px";
       linkContainerElt.style.paddingTop = "60px";
       menuToggleElt.style.top = "50px";
+      this.props.onChange({
+        isSmalScreen: this.isSmallScreen,
+        isScrollTop: true,
+        isScrollBottom: this.isScrollBottom
+      });
     }
   }
 
@@ -184,7 +213,7 @@ class NavBar extends Component {
             <span></span>
           </div>
           {/* END Mobile hamburger menu */}
-          <div className={!this.state.isMobileMenuActive && this.state.isSmallScreen  ? 'linkCenterContainer hide' : 'linkCenterContainer'}>
+          <div className={!this.state.isMobileMenuActive && this.state.isSmallScreen ? 'linkCenterContainer hide' : 'linkCenterContainer'}>
             <Link className="link" to="/">Home</Link>
             <Link className="link" to="/cv">CV</Link>
             <Link className="link" to="/realisations">Realisations</Link>
