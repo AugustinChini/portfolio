@@ -9,13 +9,15 @@
     "@types/react-dom": "16.8.4",
     "@types/react-router-dom": "^4.3.4",
     "@types/trianglify": "^1.2.0",
+    "@types/underscore": "^1.9.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-responsive-modal": "^4.0.1",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.0.0",
     "trianglify": "^2.0.0",
-    "typescript": "3.4.5"
+    "typescript": "3.4.5",
+    "underscore": "^1.9.1"
   },
   "scripts": {
     "start": "react-scripts start",

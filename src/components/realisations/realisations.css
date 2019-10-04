@@ -67,11 +67,6 @@ body {
     margin-top: 70px !important;
 }
 
-.bottomScroll {
-    height: calc(100% - 280px) !important;
-    box-shadow: -1px -10px 8px 2px !important;
-}
-
 #pictures {
     height: auto;
     width: 40%;
@@ -96,7 +91,6 @@ body {
 }
 
 #pictures img:hover {
-    width: 68%;
     box-shadow: -1px 5px 8px 2px;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;

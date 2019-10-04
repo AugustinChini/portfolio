@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { throttle } from "underscore";
 
 import { Utils } from '../../services/utils'
 import { environment } from '../../environment'
@@ -50,12 +51,12 @@ class NavBar extends Component {
     }
 
     // init resize listener for the mobile version
-    window.onresize = Utils.debounce(() => {
+    window.onresize = throttle(() => {
       this.setScreenWidth();
     }, 500);
-    window.onscroll = Utils.debounce(() => {
+    window.onscroll = throttle(() => {
       this.scrollFunction()
-    });
+    }, 100);
 
     // Bind the hamburger button chekbox
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);

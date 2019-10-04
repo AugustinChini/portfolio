@@ -7,6 +7,7 @@ import soleoTmbl from '../../assets/img/thumbnail-soleo.jpg'
 import hotelTmbl from '../../assets/img/thumbnail-hotel.jpg'
 import passerelleTmbl from '../../assets/img/thumbnail-passerelle.jpg'
 import { NavbarEvent } from '../../model/NavbarEvent';
+import { Utils } from '../../services/utils'
 
 class Realisations extends Component {
 
@@ -30,7 +31,10 @@ class Realisations extends Component {
 	 */
 	componentDidMount() {
 		// add onNavbarEvent callback on navbar event listeners
-		this.props.navbarListeners.push(this.onNavbarEvent)
+		this.props.navbarListeners.push(this.onNavbarEvent);
+		// get the screen height
+		let height = Utils.getDocHeight();
+		console.log(height);
 	}
 
 	componentWillUnmount() {
@@ -43,19 +47,12 @@ class Realisations extends Component {
 
 	private onNavbarEvent = (event: NavbarEvent) => {
 		this.setState({ navbarEvent: event });
+		console.log(Utils.getDocHeight());
 	}
 
 
 	private getCategoriesClass(): string {
-		let result = "";
-		if(!this.state.navbarEvent.isScrollTop) {
-			result += "notTopScrollMargin";
-		}
-		if ( this.state.navbarEvent.isScrollBottom ) {
-			result += " bottomScroll";
-		}
-
-		return result;
+		return !this.state.navbarEvent.isScrollTop ? "notTopScrollMargin" : "";
 	}
 
 	render() {
