@@ -8,7 +8,7 @@ class Contact extends Component<ContactProps> {
     props: any;
     customModalStyles: any=  { 
         modal: ["modal-container"],
-        closeButton: ["white"]
+        closeButton: ["modal-close-button"]
      }
 
     constructor(props: { className: string }) {
