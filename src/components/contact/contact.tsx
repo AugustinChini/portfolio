@@ -6,9 +6,27 @@ class Contact extends Component<ContactProps> {
 
     state: any = { isOpen: false };
     props: any;
+    customModalStyles: any=  { 
+        modal: ["modal-container"],
+        closeButton: ["white"]
+     }
 
-    constructor() {
-        super({ className: "" });
+    constructor(props: { className: string }) {
+        super(props);
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleChange(event: any) {
+        this.setState({ value: event.target.value });
+        event.target.style.height = "20px";
+        event.target.style.height = (event.target.scrollHeight)+"px";
+    }
+
+    handleSubmit(event: any) {
+        alert('Un essai a été envoyé : ' + this.state.value);
+        event.preventDefault();
     }
 
     onOpenModal = () => {
@@ -23,19 +41,25 @@ class Contact extends Component<ContactProps> {
         return (
             <div className={"contactButton orangeBgrd white " + this.props.className}>
                 <a onClick={this.onOpenModal}>
-                <svg viewBox="0 0 32 32" className="icon">
-                    <g fillRule="evenodd" id="icon-svg510">
-                        <path d="M19.638 20l-2.218 1.983 0.027-0-0.020 0.017h-3.306l1.697-0.009-2.267-0.011-2.244-1.98h8.331zM20.757 19l3.243-2.9v-8.091c0-0.557-0.455-1.009-1-1.009h-15c-0.552 0-1 0.444-1 1.002v8.198l3.173 2.8h10.583zM25 15.323l0.366-0.323h1.634v12.993c0 0.289-0.121 0.549-0.314 0.732v0l-7.686-6.725h-0.050l8.050-7h-1.634l1.134-1h-1.5v1.323zM6 15.323l-0.366-0.323h-1.634l8.050 7h-0.050l-7.688 6.727c-0.193-0.184-0.312-0.444-0.312-0.734v-12.993h1.634l-1.134-1h-1.5v14.006c0 1.101 0.89 1.994 2.004 1.994h20.993c1.107 0 2.004-0.895 2.004-1.994v-14.006l-3-2.64v-3.36c0-1.104-0.891-2-1.997-2h-4.093l-3.409-3-3.409 3h-4.093c-1.103 0-1.997 0.887-1.997 2v3.36l-3 2.64h1.5l1.5-1.323v2.645zM17.428 6l-1.928-1.7-1.928 1.7h3.856zM25 12.677l1.5 1.323h-1.5v-1.323zM12.5 23h6l7 6h-20l7-6zM9 10v1h13v-1h-13zM9 13v1h13v-1h-13zM9 16v1h13v-1h-13z"></path>
-                    </g>
-                </svg>
+                    <svg className="icon" viewBox="0 -2 20 20">
+                        <path d="M17.659,3.681H8.468c-0.211,0-0.383,0.172-0.383,0.383v2.681H2.341c-0.21,0-0.383,0.172-0.383,0.383v6.126c0,0.211,0.172,0.383,0.383,0.383h1.532v2.298c0,0.566,0.554,0.368,0.653,0.27l2.569-2.567h4.437c0.21,0,0.383-0.172,0.383-0.383v-2.681h1.013l2.546,2.567c0.242,0.249,0.652,0.065,0.652-0.27v-2.298h1.533c0.211,0,0.383-0.172,0.383-0.382V4.063C18.042,3.853,17.87,3.681,17.659,3.681 M11.148,12.87H6.937c-0.102,0-0.199,0.04-0.27,0.113l-2.028,2.025v-1.756c0-0.211-0.172-0.383-0.383-0.383H2.724V7.51h5.361v2.68c0,0.21,0.172,0.382,0.383,0.382h2.68V12.87z M17.276,9.807h-1.533c-0.211,0-0.383,0.172-0.383,0.383v1.755L13.356,9.92c-0.07-0.073-0.169-0.113-0.27-0.113H8.851v-5.36h8.425V9.807z"></path>
+                    </svg>
                 </a>
-                <Modal open={this.state.isOpen} onClose={this.onCloseModal}>
-                    <h2>Simple centered modal</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-                        pulvinar risus non risus hendrerit venenatis. Pellentesque sit amet
-                        hendrerit risus, sed porttitor quam.
-                    </p>
+                    <Modal open={this.state.isOpen} onClose={this.onCloseModal} classNames={this.customModalStyles}>
+                    <h2 className="white shadow">N'hesitez pas a m'envoyer un message</h2>
+                    Vous pouvez me joindre a l'adresse suivante: <a href="mailto:augustin.chini@hotmail.fr" target="_top">augustin.chini@hotmail.fr</a>. Ou bien remplir le formulaire suivant:
+                        <br />
+                    <form className="form-style" onSubmit={this.handleSubmit}>
+                        <label>
+                            Email:
+                                <input type="email"></input>
+                        </label>
+                        <label>
+                            Message:
+                                <textarea value={this.state.value} onChange={this.handleChange}></textarea>
+                        </label>
+                        <input type="submit" value="Envoyer" />
+                    </form>
                 </Modal>
             </div>
         );
