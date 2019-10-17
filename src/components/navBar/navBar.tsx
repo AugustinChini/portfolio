@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { throttle } from "underscore";
 
-import { Utils } from '../../services/utils'
+import { Utils, ApplicationIdProvider } from '../../services/utils'
 import { environment } from '../../environment'
 import { Link as LinkModel } from '../../model/environment'
 import navBarLogo from '../../assets/img/logo.png'
@@ -12,7 +12,7 @@ import { NavbarEvent } from '../../model/NavbarEvent';
 
 class NavBar extends Component {
 
-  props: { onChange: (event: NavbarEvent) => void };
+  props: { showHomeLink: boolean , onChange?: (event: NavbarEvent) => void, data:Array<LinkModel>  };
   // Main banner logo path
   logo: string = environment.initConfig.navBar.logo;
   // Array of the links in the banner
@@ -39,16 +39,20 @@ class NavBar extends Component {
   isScrollBottom: boolean = false;
   // component state
   state: any;
-
+  // the navbar instance id
+  id: number
   // Create Trianglify instance
   trianglifyPattern: any;
 
-  constructor(props: { onChange: (event: NavbarEvent) => void }) {
+  constructor(props:  { showHomeLink: boolean, onChange: (event: NavbarEvent) => void, data:Array<LinkModel>  }) {
     super(props);
     this.props = props;
     this.state = {
       isMobileMenuActive: false
     }
+
+    //get id for the navbar instance
+    this.id = ApplicationIdProvider.getInstance().getId();
 
     // init resize listener for the mobile version
     window.onresize = throttle(() => {
@@ -66,9 +70,9 @@ class NavBar extends Component {
    * Called immediately after a component is mounted. Setting state here will trigger re-rendering.
    */
   componentDidMount() {
-    let dynBgdElement = document.getElementById("dyn-bgd")
+    let dynBgdElement = document.getElementById("dyn-bgd" + this.id)
 
-    this.bgdCanvas = document.getElementById("bgd-canvas");
+    this.bgdCanvas = document.getElementById("bgd-canvas" + this.id);
 
     this.trianglifyOptions.width = dynBgdElement ? dynBgdElement.offsetWidth : 0;
     this.trianglifyOptions.height = dynBgdElement ? dynBgdElement.offsetHeight : 0;
@@ -82,11 +86,13 @@ class NavBar extends Component {
     }, 80);
 
     this.setScreenWidth();
-    this.props.onChange({
-      isScrollTop: true,
-      isSmalScreen: this.isSmallScreen,
-      isScrollBottom: this.isScrollBottom
-    })
+
+    if(this.props.onChange)
+      this.props.onChange({
+        isScrollTop: true,
+        isSmalScreen: this.isSmallScreen,
+        isScrollBottom: this.isScrollBottom
+      })
   }
 
   /**
@@ -153,7 +159,7 @@ class NavBar extends Component {
    */
   scrollFunction() {
     let navBarElt = document.getElementById("navbar");
-    let canevasElt = document.getElementById("dyn-bgd");
+    let canevasElt = document.getElementById("dyn-bgd" + this.id);
     let navBarLogoElt = document.getElementById("navBarLogo");
     let linkContainerElt = document.getElementById("linkContainer");
     let menuToggleElt = document.getElementById("menuToggle");
@@ -174,11 +180,12 @@ class NavBar extends Component {
       navBarLogoElt.style.left = "115px";
       linkContainerElt.style.paddingTop = "15px";
       menuToggleElt.style.top = "40px";
-      this.props.onChange({
-        isSmalScreen: this.isSmallScreen,
-        isScrollTop: false,
-        isScrollBottom: this.isScrollBottom
-      });
+      if(this.props.onChange)
+        this.props.onChange({
+          isSmalScreen: this.isSmallScreen,
+          isScrollTop: false,
+          isScrollBottom: this.isScrollBottom
+        });
     } else if (navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) {
       canevasElt.style.top = "-68px"
       navBarElt.style.height = "150px";
@@ -187,12 +194,34 @@ class NavBar extends Component {
       navBarLogoElt.style.left = "195px";
       linkContainerElt.style.paddingTop = "60px";
       menuToggleElt.style.top = "50px";
-      this.props.onChange({
-        isSmalScreen: this.isSmallScreen,
-        isScrollTop: true,
-        isScrollBottom: this.isScrollBottom
-      });
+      if(this.props.onChange)
+        this.props.onChange({
+          isSmalScreen: this.isSmallScreen,
+          isScrollTop: true,
+          isScrollBottom: this.isScrollBottom
+        });
     }
+  }
+
+  renderNavbarContent():Array<any> {
+    let result: Array<any> = [];
+    let links: Array<LinkModel> = this.props.data
+
+    for(let i = 0; i<links.length; ++i) {
+      if(links[i].type && links[i].type === "link")
+        result.push(<Link key={"link"+i} className="link" to={links[i].path}>{links[i].label}</Link>)
+      else
+        result.push(<p key={"link"+i}>{links[i].label}</p>)
+    }
+
+    return result;
+  }
+
+  renderHomeLink() {
+    if(this.props.showHomeLink)
+      return <Link className="link" to="/"><img id="navBarLogo" src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></Link>
+    else
+      return undefined
   }
 
   /**
@@ -201,10 +230,10 @@ class NavBar extends Component {
   render() {
     return (
       <div id="navbar" className={this.state.isMobileMenuActive ? 'navBarContainer white orangeBgrd shadow expand' : 'navBarContainer white orangeBgrd shadow'}>
-        <div id="dyn-bgd">
-          <canvas id="bgd-canvas" className="shadow"></canvas>
+        <div id={"dyn-bgd" + this.id} className="dyn-bgd-position">
+          <canvas id={"bgd-canvas" + this.id} className="shadow"></canvas>
         </div>
-        <Link className="link" to="/"><img id="navBarLogo" src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></Link>
+        {this.renderHomeLink()}
         <div id="linkContainer">
           {/* Mobile hamburger menu */}
           <div id="menuToggle">
@@ -215,9 +244,7 @@ class NavBar extends Component {
           </div>
           {/* END Mobile hamburger menu */}
           <div className={!this.state.isMobileMenuActive && this.state.isSmallScreen ? 'linkCenterContainer hide' : 'linkCenterContainer'}>
-            <Link className="link" to="/">Home</Link>
-            <Link className="link" to="/cv">CV</Link>
-            <Link className="link" to="/realisations">Realisations</Link>
+            {this.renderNavbarContent()}
           </div>
         </div>
       </div >

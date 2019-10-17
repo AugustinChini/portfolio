@@ -34,5 +34,26 @@ export class Utils {
         );
     }
 
+    
 }
 
+export class ApplicationIdProvider {
+    private static instance: ApplicationIdProvider;
+    private currentId: number
+
+    private constructor() {
+        this.currentId = 1;
+    }
+    static getInstance() {
+        if (!ApplicationIdProvider.instance) {
+            ApplicationIdProvider.instance = new ApplicationIdProvider();
+            // ... any one time initialization goes here ...
+        }
+        return ApplicationIdProvider.instance;
+    }
+
+    public getId(): number {
+        // return the current id and then incremement it
+        return this.currentId++;
+    }
+}

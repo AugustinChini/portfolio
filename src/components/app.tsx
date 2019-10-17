@@ -10,12 +10,13 @@ import Realisations from './realisations/realisations';
 import Cv from './cv/cv';
 import Contact from './contact/contact';
 import { NavbarEvent } from '../model/NavbarEvent';
+import { environment } from '../environment';
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <Router>
-        <NavBar onChange={onNavbarChange} />
+        <NavBar showHomeLink={true} data={environment.initConfig.navBar.links} onChange={onNavbarChange} />
         <div className="pageContainer">
           <Route exact path="/" component={Home} />
           <Route path="/cv" component={Cv} />

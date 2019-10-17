@@ -8,22 +8,26 @@ export const environment: Environment = {
 	initConfig: {
 		navBar: {
 			logo: "./assets/img/logo.png",
+			hasHomeLink: true,
 			links: [
 				{
 					label: "Accueil",
-					path: "/home",
-					params: []
+					path: "/",
+					params: [],
+					type: "link"
+				},
+				{
+					label: "CV",
+					path: "/cv",
+					params: [],
+					type: "link"
 				},
 				{
 					label: "Réalisations",
 					path: "/realisations",
-					params: []
+					params: [],
+					type: "link"
 				},
-				{
-					label: "Contact",
-					path: "/contact",
-					params: []
-				}
 			]
 		},
 		home: {

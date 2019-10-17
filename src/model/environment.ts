@@ -6,12 +6,14 @@ export interface Environment {
 export interface Link {
     label: string;
     path: string;
-    params: any[];
+    params?: any[];
+    type?: "link" | "none"
 }
 
 export interface NavBar {
     logo: string;
     links: Link[];
+    hasHomeLink: boolean;
 }
 
 export interface Section {
