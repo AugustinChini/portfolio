@@ -7,7 +7,6 @@ import soleoTmbl from '../../assets/img/thumbnail-soleo.jpg'
 import hotelTmbl from '../../assets/img/thumbnail-hotel.jpg'
 import passerelleTmbl from '../../assets/img/thumbnail-passerelle.jpg'
 import { NavbarEvent } from '../../model/NavbarEvent';
-import { Utils } from '../../services/utils'
 
 class Realisations extends Component {
 
@@ -32,9 +31,6 @@ class Realisations extends Component {
 	componentDidMount() {
 		// add onNavbarEvent callback on navbar event listeners
 		this.props.navbarListeners.push(this.onNavbarEvent);
-		// get the screen height
-		let height = Utils.getDocHeight();
-		console.log(height);
 	}
 
 	componentWillUnmount() {
@@ -47,12 +43,15 @@ class Realisations extends Component {
 
 	private onNavbarEvent = (event: NavbarEvent) => {
 		this.setState({ navbarEvent: event });
-		console.log(Utils.getDocHeight());
 	}
 
 
 	private getCategoriesClass(): string {
-		return !this.state.navbarEvent.isScrollTop ? "notTopScrollMargin" : "";
+		return !this.state.navbarEvent.isScrollTop ? "notTopScrollCatMargin" : "";
+	}
+
+	private getDescriptionClass(): string {
+		return !this.state.navbarEvent.isScrollTop ? "notTopScrollPresMargin" : "";
 	}
 
 	render() {
@@ -64,7 +63,7 @@ class Realisations extends Component {
 						<img alt="Dev Category" src={devCategoryLogo} />
 						<img alt="Network Category" src={netCategoryLogo} />
 					</div>
-					<div id="presentation">
+					<div id="presentation" className={this.getDescriptionClass()}>
 						<div id="descriptionContainer">
 							<p>- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils
 							utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.</p>

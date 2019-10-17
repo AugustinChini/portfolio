@@ -63,8 +63,12 @@ body {
     transition: all 0.3s ease-out;
 }
 
-.notTopScrollMargin {
+.notTopScrollCatMargin {
     margin-top: 70px !important;
+}
+
+.notTopScrollPresMargin {
+    top: 80px !important;
 }
 
 #pictures {
@@ -91,6 +95,7 @@ body {
 }
 
 #pictures img:hover {
+    opacity: 0.6;
     box-shadow: -1px 5px 8px 2px;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
@@ -109,12 +114,11 @@ body {
     text-align: center;
     height: 100%;
     width: calc(60% - 100px);
-    top: 75px;
+    top: 150px;
 }
 
 #descriptionContainer {
-    display: table-cell;
-    vertical-align: middle;
+    margin-top: 20px;
 }
 
 #descriptionContainer p:first-child {

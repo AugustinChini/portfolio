@@ -165,7 +165,7 @@ class NavBar extends Component {
     let menuToggleElt = document.getElementById("menuToggle");
 
     // test if the scrollbar reach the bottom
-    if (Utils.getDocHeight() == Utils.getScrollXY()[1] + window.innerHeight) {
+    if (Utils.getDocHeight() === Utils.getScrollXY()[1] + window.innerHeight) {
       this.isScrollBottom = true;
     } else {
       this.isScrollBottom = false;
