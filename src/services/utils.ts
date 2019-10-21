@@ -34,7 +34,46 @@ export class Utils {
         );
     }
 
-    
+}
+
+/**
+ * Waiter an object which get a condition and wait until this condition is true 
+ * checking every Xsec if the state have changed then call a callback function 
+ */
+export class Waiter {
+
+    private cond: () => boolean;
+    private delay: number;
+    private maxRetry: number;
+    private checkCpt: number = 0;
+    private interval: number = -1;
+    /**
+     * constructor
+     * @param condition a function testing a condition and returning a boolean
+     * @param delay time to wait in ms until the waiter will check the condition
+     * @param maxRetry how many time the waiter will check
+     */
+    public constructor(condition: () => boolean, delay: number = 1000, maxRetry = 1000) {
+        this.cond = condition;
+        this.delay = delay;
+        this.maxRetry = maxRetry;
+    }
+
+    /**
+     * tellMeWhenItsReady launch the interval and call the callback when the condition is true
+     * @param callback function to call when the condition is true
+     */
+    public tellMeWhenItsReady(callback: Function) {
+        this.interval = window.setInterval(() => {
+            let hasError = this.checkCpt === this.maxRetry;
+            if (this.cond() || hasError) {
+                window.clearInterval(this.interval);
+                callback(hasError);
+            } else {
+                this.checkCpt += 1;
+            }
+        }, this.delay);
+    }
 }
 
 export class ApplicationIdProvider {

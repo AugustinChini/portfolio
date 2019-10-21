@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { throttle } from "underscore";
 
-import { Utils, ApplicationIdProvider } from '../../services/utils'
+import { Utils, ApplicationIdProvider, Waiter } from '../../services/utils'
 import { environment } from '../../environment'
 import { Link as LinkModel } from '../../model/environment'
 import navBarLogo from '../../assets/img/logo.png'
@@ -12,7 +12,7 @@ import { NavbarEvent } from '../../model/NavbarEvent';
 
 class NavBar extends Component {
 
-  props: { showHomeLink: boolean , onChange?: (event: NavbarEvent) => void, data:Array<LinkModel>  };
+  props: { showHomeLink: boolean, onChange?: (event: NavbarEvent) => void, data: Array<LinkModel>, style?: any };
   // Main banner logo path
   logo: string = environment.initConfig.navBar.logo;
   // Array of the links in the banner
@@ -43,8 +43,18 @@ class NavBar extends Component {
   id: number
   // Create Trianglify instance
   trianglifyPattern: any;
+  // store the resize and scroll callback to delete the listeners
+  resizeCallback: any;
+  scrollCallback: any;
 
-  constructor(props:  { showHomeLink: boolean, onChange: (event: NavbarEvent) => void, data:Array<LinkModel>  }) {
+  // usefull DOM selector
+  navBarElt: HTMLElement | null = null
+  canevasElt: HTMLElement  | null = null
+  navBarLogoElt: HTMLElement  | null = null
+  linkContainerElt: HTMLElement  | null = null
+  menuToggleElt: HTMLElement  | null = null
+
+  constructor(props: { showHomeLink: boolean, onChange: (event: NavbarEvent) => void, data: Array<LinkModel>, style?: string }) {
     super(props);
     this.props = props;
     this.state = {
@@ -55,12 +65,14 @@ class NavBar extends Component {
     this.id = ApplicationIdProvider.getInstance().getId();
 
     // init resize listener for the mobile version
-    window.onresize = throttle(() => {
+    this.resizeCallback = throttle(() => {
       this.setScreenWidth();
     }, 500);
-    window.onscroll = throttle(() => {
+    this.scrollCallback = throttle(() => {
       this.scrollFunction()
     }, 100);
+    window.addEventListener('resize', this.resizeCallback);
+    window.addEventListener('scroll', this.scrollCallback);
 
     // Bind the hamburger button chekbox
     this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
@@ -70,29 +82,41 @@ class NavBar extends Component {
    * Called immediately after a component is mounted. Setting state here will trigger re-rendering.
    */
   componentDidMount() {
-    let dynBgdElement = document.getElementById("dyn-bgd" + this.id)
 
-    this.bgdCanvas = document.getElementById("bgd-canvas" + this.id);
+    // wait for the dom render (ex. when the navbar is within a modal)
+    let waiter = new Waiter(() => { return document.getElementById("dyn-bgd" + this.id) !== undefined }, 500);
+    waiter.tellMeWhenItsReady(() => {
+      // set all the dom selectors
+      this.navBarElt = document.getElementById("navbar");
+      this.canevasElt = document.getElementById("dyn-bgd" + this.id);
+      this.navBarLogoElt = document.getElementById("navBarLogo");
+      this.linkContainerElt = document.getElementById("linkContainer");
+      this.menuToggleElt = document.getElementById("menuToggle");
+      this.bgdCanvas = document.getElementById("bgd-canvas" + this.id);
 
-    this.trianglifyOptions.width = dynBgdElement ? dynBgdElement.offsetWidth : 0;
-    this.trianglifyOptions.height = dynBgdElement ? dynBgdElement.offsetHeight : 0;
+      let dynBgdElement = document.getElementById("dyn-bgd" + this.id)
 
-    this.trianglifyPattern = Trianglify(this.trianglifyOptions);
+      this.trianglifyOptions.width = dynBgdElement ? dynBgdElement.offsetWidth : 0;
+      this.trianglifyOptions.height = dynBgdElement ? dynBgdElement.offsetHeight : 0;
 
-    this.trianglifyPattern.canvas(this.bgdCanvas);
+      this.trianglifyPattern = Trianglify(this.trianglifyOptions);
 
-    this.canvasInterval = setInterval(() => {
-      this.refreshCanvas();
-    }, 80);
+      this.trianglifyPattern.canvas(this.bgdCanvas);
 
-    this.setScreenWidth();
+      this.canvasInterval = setInterval(() => {
+        this.refreshCanvas();
+      }, 80);
 
-    if(this.props.onChange)
-      this.props.onChange({
-        isScrollTop: true,
-        isSmalScreen: this.isSmallScreen,
-        isScrollBottom: this.isScrollBottom
-      })
+      this.setScreenWidth();
+
+      if (this.props.onChange)
+        this.props.onChange({
+          isScrollTop: true,
+          isSmalScreen: this.isSmallScreen,
+          isScrollBottom: this.isScrollBottom
+        })
+    });
+
   }
 
   /**
@@ -101,6 +125,8 @@ class NavBar extends Component {
    */
   componentWillUnmount() {
     clearInterval(this.canvasInterval);
+    window.removeEventListener("scroll", this.scrollCallback);
+    window.removeEventListener("resize", this.resizeCallback);
   }
 
   /**
@@ -158,12 +184,6 @@ class NavBar extends Component {
    * Refresh the narBar state in function of the screen size
    */
   scrollFunction() {
-    let navBarElt = document.getElementById("navbar");
-    let canevasElt = document.getElementById("dyn-bgd" + this.id);
-    let navBarLogoElt = document.getElementById("navBarLogo");
-    let linkContainerElt = document.getElementById("linkContainer");
-    let menuToggleElt = document.getElementById("menuToggle");
-
     // test if the scrollbar reach the bottom
     if (Utils.getDocHeight() === Utils.getScrollXY()[1] + window.innerHeight) {
       this.isScrollBottom = true;
@@ -172,29 +192,29 @@ class NavBar extends Component {
     }
 
     // TODO use a CSS class instead
-    if ((navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80)) {
-      navBarElt.style.height = "70px";
-      canevasElt.style.top = "-148px";
-      navBarLogoElt.style.height = "65px";
-      navBarLogoElt.style.top = "3px";
-      navBarLogoElt.style.left = "115px";
-      linkContainerElt.style.paddingTop = "15px";
-      menuToggleElt.style.top = "40px";
-      if(this.props.onChange)
+    if ((this.navBarElt && this.canevasElt && this.navBarLogoElt && this.linkContainerElt && this.menuToggleElt) && (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80)) {
+      this.navBarElt.style.height = "70px";
+      this.canevasElt.style.top = "-148px";
+      this.navBarLogoElt.style.height = "65px";
+      this.navBarLogoElt.style.top = "3px";
+      this.navBarLogoElt.style.left = "115px";
+      this.linkContainerElt.style.paddingTop = "15px";
+      this.menuToggleElt.style.top = "40px";
+      if (this.props.onChange)
         this.props.onChange({
           isSmalScreen: this.isSmallScreen,
           isScrollTop: false,
           isScrollBottom: this.isScrollBottom
         });
-    } else if (navBarElt && canevasElt && navBarLogoElt && linkContainerElt && menuToggleElt) {
-      canevasElt.style.top = "-68px"
-      navBarElt.style.height = "150px";
-      navBarLogoElt.style.height = "90px";
-      navBarLogoElt.style.top = "32px";
-      navBarLogoElt.style.left = "195px";
-      linkContainerElt.style.paddingTop = "60px";
-      menuToggleElt.style.top = "50px";
-      if(this.props.onChange)
+    } else if (this.navBarElt && this.canevasElt && this.navBarLogoElt && this.linkContainerElt && this.menuToggleElt) {
+      this.canevasElt.style.top = "-68px"
+      this.navBarElt.style.height = "150px";
+      this.navBarLogoElt.style.height = "90px";
+      this.navBarLogoElt.style.top = "32px";
+      this.navBarLogoElt.style.left = "195px";
+      this.linkContainerElt.style.paddingTop = "60px";
+      this.menuToggleElt.style.top = "50px";
+      if (this.props.onChange)
         this.props.onChange({
           isSmalScreen: this.isSmallScreen,
           isScrollTop: true,
@@ -203,22 +223,22 @@ class NavBar extends Component {
     }
   }
 
-  renderNavbarContent():Array<any> {
+  renderNavbarContent(): Array<any> {
     let result: Array<any> = [];
     let links: Array<LinkModel> = this.props.data
 
-    for(let i = 0; i<links.length; ++i) {
-      if(links[i].type && links[i].type === "link")
-        result.push(<Link key={"link"+i} className="link" to={links[i].path}>{links[i].label}</Link>)
+    for (let i = 0; i < links.length; ++i) {
+      if (links[i].type && links[i].type === "link")
+        result.push(<Link key={"link" + i} className="link" to={links[i].path}>{links[i].label}</Link>)
       else
-        result.push(<p key={"link"+i}>{links[i].label}</p>)
+        result.push(<p key={"link" + i}>{links[i].label}</p>)
     }
 
     return result;
   }
 
   renderHomeLink() {
-    if(this.props.showHomeLink)
+    if (this.props.showHomeLink)
       return <Link className="link" to="/"><img id="navBarLogo" src={navBarLogo} className="navBarLogo" alt="Logo d'accueil" /></Link>
     else
       return undefined
@@ -229,7 +249,9 @@ class NavBar extends Component {
    */
   render() {
     return (
-      <div id="navbar" className={this.state.isMobileMenuActive ? 'navBarContainer white orangeBgrd shadow expand' : 'navBarContainer white orangeBgrd shadow'}>
+      <div id="navbar"
+      className={this.state.isMobileMenuActive ? 'navBarContainer white orangeBgrd shadow expand' : 'navBarContainer white orangeBgrd shadow'}
+      style={this.props.style}>
         <div id={"dyn-bgd" + this.id} className="dyn-bgd-position">
           <canvas id={"bgd-canvas" + this.id} className="shadow"></canvas>
         </div>

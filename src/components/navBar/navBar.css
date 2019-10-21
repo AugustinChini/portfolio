@@ -17,6 +17,10 @@
     padding-top: 60px;
 }
 
+.linkCenterContainer {
+    text-align: center;
+}
+
 #linkContainer a {
     float: left;
     text-align: center;

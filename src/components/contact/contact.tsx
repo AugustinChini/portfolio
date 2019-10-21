@@ -14,7 +14,7 @@ class Contact extends Component<ContactProps> {
         closeButton: ["modal-close-button"]
     }
     title: Link = {
-        label: "N'hesitez pas a m'envoyer un message",
+        label: "Contact",
         path: "#",
         type: "none"
     }
@@ -48,7 +48,7 @@ class Contact extends Component<ContactProps> {
 
     renderNavbar() {
         if(this.state.isOpen)
-            return <NavBar showHomeLink={false} data={[this.title]}/>
+            return <NavBar style={{position: "relative", overflow: "hidden"}} showHomeLink={false} data={[this.title]}/>
         else
             return undefined
     }
@@ -63,17 +63,16 @@ class Contact extends Component<ContactProps> {
                 </a>
                 <Modal open={this.state.isOpen} onClose={this.onCloseModal} classNames={this.customModalStyles}>
                     {this.renderNavbar()}
-                    <h2 className="white shadow"></h2>
                     <p>Vous pouvez me joindre a l'adresse suivante: <a href="mailto:augustin.chini@hotmail.fr" target="_top">augustin.chini@hotmail.fr</a>. Ou bien remplir le formulaire suivant:</p>
                         <br />
                     <form className="form-style" onSubmit={this.handleSubmit}>
                         <label>
-                            Email:
-                                <input type="email"></input>
+                            <input type="email"></input>
+                            <span>Email:</span>
                         </label>
                         <label>
-                            Message:
-                                <textarea value={this.state.value} onChange={this.handleChange}></textarea>
+                            <textarea value={this.state.value} onChange={this.handleChange}></textarea>
+                            <span>Message:</span>
                         </label>
                         <input type="submit" value="Envoyer" />
                     </form>
