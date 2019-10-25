@@ -1,33 +1,90 @@
-#footer {
-    position: absolute;
-    z-index: 5;
-    width: 100%;
-}
-
-.footerLine {
-    height: 10px;
-    background-color: #feae17;
-}
-
-.footerContainer {
-    width: 100%;
-    height: 200px;
-    background-color: rgb(58, 58, 58);
-    color: white;
-}
-
-.siteMapContainer {
-    width: 25%;
-    float: left;
-}
-
-.contactContainer {
-    width: 50%;
-    float: left;
-    text-align: center;
-}
-
-.signatureContainer {
-    width: 25%;
-    float: right;
-}
+    #footer {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        font-size: 12px;
+    }
+    
+    .footerLine {
+        height: 10px;
+        background-color: #feae17;
+    }
+    
+    .footerContainer {
+        width: 100%;
+        height: 100px;
+        background-color: rgb(58, 58, 58);
+        color: white;
+    }
+    
+    .siteMapContainer {
+        width: 25%;
+        float: left;
+        padding-left: 20px;
+        text-align: left;
+    }
+    
+    .siteMapContainer p {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 10px 0 10px 0;
+    }
+    
+    .siteMapContainer ul {
+        padding-left: 20px;
+        margin: 0;
+    }
+    
+    .siteMapContainer ul>li {
+        list-style-type: none;
+        padding-bottom: 5px;
+    }
+    
+    .contactContainer {
+        width: 50%;
+        float: left;
+        text-align: center;
+    }
+    
+    .contactContainer p {
+        font-weight: bold;
+        font-size: 16px;
+        margin: 10px 0 10px 0;
+    }
+    
+    .signatureContainer {
+        text-align: right;
+        width: 25%;
+        float: right;
+        padding-right: 20px;
+    }
+    
+    .signatureContainer p {
+        margin: 10px 20px 10px 0;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    
+    .signature {
+        margin: 10px 0 10px 20px;
+    }
+    
+    .contactButton {
+        box-shadow: 3px 5px 4px -1px #2f2f2f;
+        border-radius: 35px 35px 35px 35px;
+        cursor: pointer;
+        padding: 5px;
+        display: inline-block;
+    }
+    
+    .footerContactButton {
+        width: 40px;
+        height: 40px;
+        margin-right: 7px;
+    }
+    
+    .footerIcon {
+        width: 34px;
+        height: 34px;
+        fill: #505050;
+    }

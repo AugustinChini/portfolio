@@ -47,7 +47,6 @@ class Home extends Component {
 	public render() {
 		return (
 			<div className="container">
-
 				<div className="mainContainer">
 					<div className="highlight">
 						<p>

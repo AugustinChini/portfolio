@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Modal from "react-responsive-modal";
 import './contact.css';
 import NavBar from '../navBar/navBar';
-import { Router } from 'react-router';
 import { Link } from '../../model/environment';
 
 class Contact extends Component<ContactProps> {
@@ -18,7 +17,6 @@ class Contact extends Component<ContactProps> {
         path: "#",
         type: "none"
     }
-
 
     constructor(props: { className: string }) {
         super(props);
@@ -53,6 +51,10 @@ class Contact extends Component<ContactProps> {
             return undefined
     }
 
+    bottomAnimation() {
+        
+    }
+
     render() {
         return (
             <div className={"contactButton orangeBgrd white " + this.props.className}>
@@ -63,8 +65,8 @@ class Contact extends Component<ContactProps> {
                 </a>
                 <Modal open={this.state.isOpen} onClose={this.onCloseModal} classNames={this.customModalStyles}>
                     {this.renderNavbar()}
-                    <p>Vous pouvez me joindre a l'adresse suivante: <a href="mailto:augustin.chini@hotmail.fr" target="_top">augustin.chini@hotmail.fr</a>. Ou bien remplir le formulaire suivant:</p>
-                        <br />
+                    <p className="contact-description">Vous pouvez me joindre a l'adresse suivante: <a href="mailto:augustin.chini@hotmail.fr" target="_top">augustin.chini@hotmail.fr</a>. Ou bien remplir le formulaire suivant:</p>
+                    <br />
                     <form className="form-style" onSubmit={this.handleSubmit}>
                         <label>
                             <input type="email"></input>
