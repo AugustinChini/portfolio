@@ -24,7 +24,7 @@ const App: React.FC = () => {
         </div>
         <Footer />
       </Router>
-      <Contact className="contactLink" />
+      <Contact className="contactLink" navbarListeners={navbarListeners} />
     </div>
   );
 }
