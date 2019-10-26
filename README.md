@@ -1,0 +1,1 @@
+My personal portfolio. I've been working for 3 years with AngularJs and Angular 2+, so I choose React with TypeScript to discover this famous framework, and something new.
