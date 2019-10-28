@@ -99,14 +99,18 @@ class Contact extends Component<ContactProps> {
                 opacity: 0
             }, {
                 duration: 200,
-                complete: () => { window.setTimeout(() => { if (contactButton) contactButton.style.display = "none" }, 1000) }
+                complete: () => { 
+                    window.setTimeout(() => { 
+                        if (contactButton) contactButton.style.display = "none" 
+                    }, 1000);
+                }
             });
 
             // show the new fixed contact button
-            AnimationManager.getInstance().animate("showFooterContactButton", footerContactButton, {
+            AnimationManager.getInstance().animate("immediate", footerContactButton, {
                 opacity: 1
             }, {
-                duration: 450,
+                duration: 300,
             });
 
         } else if (contactButton && footerContactButton) {
@@ -121,10 +125,10 @@ class Contact extends Component<ContactProps> {
             });
 
             // hide the new fixed contact button
-            AnimationManager.getInstance().animate("showFooterContactButton", footerContactButton, {
+            AnimationManager.getInstance().animate("immediate", footerContactButton, {
                 opacity: 0
             }, {
-                duration: 450,
+                duration: 300,
             });
         }
     }

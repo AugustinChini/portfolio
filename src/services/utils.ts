@@ -128,9 +128,13 @@ export class AnimationManager {
      * @param properties props
      * @param options options
      */
-    public animate(id: string | number, elements: HTMLElement | HTMLCollection | NodeListOf<HTMLElement>, properties: any, options: any) {
+    public animate(id: string | number | "immediate", elements: HTMLElement | HTMLCollection | NodeListOf<HTMLElement>, properties: any, options: any) {
 
-        if (this.runningAnimationId !== id) {
+        if(id === "immediate") {
+            // run the Velocity animation
+            Velocity.animate(elements, properties, options);
+        } else if (this.runningAnimationId !== id) {
+            console.log(id)
             // we're about to start an animation so set the hasRunningAnimation to true
             this.runningAnimationId = id;
             // run the Velocity animation
