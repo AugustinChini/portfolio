@@ -1,4 +1,10 @@
-export class Utils {
+import Velocity from "velocity-animate"
+
+
+/**
+ * All utils in relation to screen size
+ */
+export class Screen {
     /**
      * getScrollXY
      * @see http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
@@ -76,6 +82,9 @@ export class Waiter {
     }
 }
 
+/**
+ * ApplicationIdProvider singleton provide unique incremental id for all the application scope
+ */
 export class ApplicationIdProvider {
     private static instance: ApplicationIdProvider;
     private currentId: number
@@ -86,7 +95,6 @@ export class ApplicationIdProvider {
     static getInstance() {
         if (!ApplicationIdProvider.instance) {
             ApplicationIdProvider.instance = new ApplicationIdProvider();
-            // ... any one time initialization goes here ...
         }
         return ApplicationIdProvider.instance;
     }
@@ -94,5 +102,40 @@ export class ApplicationIdProvider {
     public getId(): number {
         // return the current id and then incremement it
         return this.currentId++;
+    }
+}
+
+/**
+ * AnimationManager wrap the Velocity lib API, to prevent multi call to animate methode
+ */
+export class AnimationManager {
+    private static instance: AnimationManager;
+    runningAnimationId: string | number = 0;
+
+    private constructor() { }
+
+    static getInstance() {
+        if (!AnimationManager.instance) {
+            AnimationManager.instance = new AnimationManager();
+        }
+        return AnimationManager.instance;
+    }
+
+    /**
+     * Performe an animation
+     * @param id string or number to identify an animation (if an animation is called X times with the same id it will be executed only once)
+     * @param elements DOM element to anmiate
+     * @param properties props
+     * @param options options
+     */
+    public animate(id: string | number, elements: HTMLElement | HTMLCollection | NodeListOf<HTMLElement>, properties: any, options: any) {
+
+        if (this.runningAnimationId !== id) {
+            // we're about to start an animation so set the hasRunningAnimation to true
+            this.runningAnimationId = id;
+            // run the Velocity animation
+            Velocity.animate(elements, properties, options);
+        }
+
     }
 }

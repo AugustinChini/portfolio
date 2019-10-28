@@ -5,6 +5,10 @@
         font-size: 12px;
     }
     
+    #contact-footer-button {
+        opacity: 0;
+    }
+    
     .footerLine {
         height: 10px;
         background-color: #feae17;

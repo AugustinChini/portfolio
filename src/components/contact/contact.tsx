@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Modal from "react-responsive-modal";
 import './contact.css';
 import NavBar from '../navBar/navBar';
+import { AnimationManager } from "../../services/utils";
 import { Link } from '../../model/environment';
 import { NavbarEvent } from '../../model/NavbarEvent';
 
@@ -84,16 +85,47 @@ class Contact extends Component<ContactProps> {
      * @param event navbar event
      */
     bottomAnimation(event: NavbarEvent) {
-        let footerContactButton: HTMLElement | null = document.getElementById("contact-footer-button")
-        let contactButton: HTMLElement | null = document.getElementById("contact-button")
-        if(footerContactButton && contactButton && event.isScrollBottom) {
-            contactButton.style.left = footerContactButton.offsetLeft + "px";
-            contactButton.style.right = "unset";
-            contactButton.style.transition = "all 1s ease-in-out;"
-        } else if(contactButton) {
-            contactButton.style.left = "unset";
-            contactButton.style.right = "50px";
-            contactButton.style.transition = "all 1s ease-in-out;"
+        let footerContactButton: HTMLElement | null = document.getElementById("contact-footer-button");
+        let contactButton: HTMLElement | null = document.getElementById("contact-button");
+        if (footerContactButton && contactButton && event.isScrollBottom) {
+            let doc = document;
+            let docElem: HTMLElement = doc.documentElement;
+            let body: HTMLElement = doc.getElementsByTagName('body')[0];
+            let screenWidth = window.innerWidth || docElem.clientWidth || body.clientWidth;
+
+            // translate the absolute contact button to the left ans hide it
+            AnimationManager.getInstance().animate("scrollBottom", contactButton, {
+                right: (screenWidth - footerContactButton.offsetLeft - 80) + "px",
+                opacity: 0
+            }, {
+                duration: 200,
+                complete: () => { window.setTimeout(() => { if (contactButton) contactButton.style.display = "none" }, 1000) }
+            });
+
+            // show the new fixed contact button
+            AnimationManager.getInstance().animate("showFooterContactButton", footerContactButton, {
+                opacity: 1
+            }, {
+                duration: 450,
+            });
+
+        } else if (contactButton && footerContactButton) {
+
+            //show the floating contact button
+            contactButton.style.display = "block";
+            AnimationManager.getInstance().animate("notScrollBottom", contactButton, {
+                right: "50px",
+                opacity: 1
+            }, {
+                duration: 200
+            });
+
+            // hide the new fixed contact button
+            AnimationManager.getInstance().animate("showFooterContactButton", footerContactButton, {
+                opacity: 0
+            }, {
+                duration: 450,
+            });
         }
     }
 

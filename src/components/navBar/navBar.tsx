@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { throttle } from "underscore";
 
-import { Utils, ApplicationIdProvider, Waiter } from '../../services/utils'
+import { Screen, ApplicationIdProvider, Waiter } from '../../services/utils'
 import { environment } from '../../environment'
 import { Link as LinkModel } from '../../model/environment'
 import navBarLogo from '../../assets/img/logo.png'
@@ -185,7 +185,7 @@ class NavBar extends Component {
    */
   scrollFunction() {
     // test if the scrollbar reach the bottom
-    if (Utils.getDocHeight() === Utils.getScrollXY()[1] + window.innerHeight) {
+    if (Screen.getDocHeight() === Screen.getScrollXY()[1] + window.innerHeight) {
       this.isScrollBottom = true;
     } else {
       this.isScrollBottom = false;
