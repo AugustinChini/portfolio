@@ -98,37 +98,30 @@ class Contact extends Component<ContactProps> {
                 right: (screenWidth - footerContactButton.offsetLeft - 80) + "px",
                 opacity: 0
             }, {
-                duration: 200,
-                complete: () => { 
-                    window.setTimeout(() => { 
-                        if (contactButton) contactButton.style.display = "none" 
-                    }, 1000);
-                }
+                duration: 100
             });
 
             // show the new fixed contact button
-            AnimationManager.getInstance().animate("immediate", footerContactButton, {
+            AnimationManager.getInstance().animate("showFooterButton", footerContactButton, {
                 opacity: 1
             }, {
-                duration: 300,
+                duration: 800,
             });
 
         } else if (contactButton && footerContactButton) {
 
-            //show the floating contact button
-            contactButton.style.display = "block";
             AnimationManager.getInstance().animate("notScrollBottom", contactButton, {
                 right: "50px",
                 opacity: 1
             }, {
-                duration: 200
+                duration: 100
             });
 
             // hide the new fixed contact button
-            AnimationManager.getInstance().animate("immediate", footerContactButton, {
+            AnimationManager.getInstance().animate("hideFooterButton", footerContactButton, {
                 opacity: 0
             }, {
-                duration: 300,
+                duration: 800,
             });
         }
     }

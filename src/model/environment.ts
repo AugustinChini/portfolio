@@ -38,20 +38,22 @@ export interface Picture {
 export interface Project {
     title: string;
     description: string;
+    keywords: string;
     icon: string;
     pictures: Picture[];
 }
 
-export interface Section2 {
+export interface RealisationSection {
     id: string;
     icon: string;
+    alt: string;
     displayName: string;
     projects: Project[];
 }
 
 export interface Realisations {
     title: string;
-    sections: Section2[];
+    sections: RealisationSection[];
 }
 
 export interface InitConfig {

@@ -1,6 +1,12 @@
 import { Environment } from "./model/environment"
 
 import devIcon from './assets/img/dev.jpg'
+import devCategoryLogo from './assets/img/rea-dev.png'
+import netCategoryLogo from './assets/img/rea-network.png'
+import webCategoryLogo from './assets/img/rea-web.png'
+import soleoTmbl from './assets/img/thumbnail-soleo.jpg'
+import hotelTmbl from './assets/img/thumbnail-hotel.jpg'
+import passerelleTmbl from './assets/img/thumbnail-passerelle.jpg'
 
 // global environement variables 
 export const environment: Environment = {
@@ -43,12 +49,12 @@ export const environment: Environment = {
 				{
 					picture: devIcon,
 					alt: "description de logo",
-					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. "
+					description: "Consectetur adipiscing elit. Curabitur vitae egestas metus. amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. "
 				},
 				{
 					picture: devIcon,
 					alt: "description de logo",
-					description: "Ut elementum sed sapien a ornare. Vestibulum sed lectus id ipsum facilisis dictum et vel ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer euismod augue a libero feugiat, nec malesuada urna fermentum. Ut est ipsum, mattis at erat eget, pulvinar co"
+					description: "Amet, consectetur adipiscing elit. Curabitur vitae egestas metusUt elementum sed sapien a ornare. Vestibulum sed lectus id ipsum facilisis dictum et vel ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer euismod augue a libero feugiat, nec malesuada urna fermentum. Ut est ipsum, mattis at erat eget, pulvinar co"
 				}
 			]
 		},
@@ -57,28 +63,30 @@ export const environment: Environment = {
 			sections: [
 				{
 					id: "dev",
-					icon: "./assets/img/dev.jpg",
+					icon: devCategoryLogo,
 					displayName: "Développement",
+					alt: "dev section",
 					projects: [
 						{
 							title: "Mon titre 1",
-							description: "Je suis une description",
+							description: "- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
 							icon: "./assets/img/dev.jpg",
+							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Soleo",
+									description: "Thumbnail soleo",
+									source: soleoTmbl
 								},
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Gestion d'hotel",
+									description: "Thumbnail hotel",
+									source: hotelTmbl
 								},
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Association Passerelle",
+									description: "Thumbnail passerelle",
+									source: passerelleTmbl
 								}
 							]
 						}
@@ -86,13 +94,15 @@ export const environment: Environment = {
 				},
 				{
 					id: "net",
-					icon: "./assets/img/dev.jpg",
+					icon: netCategoryLogo,
 					displayName: "Réseaux",
+					alt: "reseau section",
 					projects: [
 						{
 							title: "Mon titre 1",
 							description: "Je suis une description",
 							icon: "./assets/img/dev.jpg",
+							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{
 									title: "Le titre d'une photo",
@@ -115,13 +125,15 @@ export const environment: Environment = {
 				},
 				{
 					id: "graph",
-					icon: "./assets/img/dev.jpg",
+					icon: webCategoryLogo,
 					displayName: "Graphisme",
+					alt: "graphisme section",
 					projects: [
 						{
 							title: "Mon titre 1",
 							description: "Je suis une description",
 							icon: "./assets/img/dev.jpg",
+							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{
 									title: "Le titre d'une photo",

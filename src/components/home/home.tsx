@@ -12,7 +12,7 @@ class Home extends Component {
 	 * @returns React Dom elements
 	 */
 	private createSections() {
-		let sections: Array<any> = [];
+		let sections: Array<JSX.Element> = [];
 
 		environment.initConfig.home.sections.forEach((section: Section, index: number) => {
 			let isOdd: boolean = this.isOdd(index);

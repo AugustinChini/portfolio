@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component, MouseEvent } from 'react';
 import './realisations.css';
-import devCategoryLogo from '../../assets/img/rea-dev.png'
-import netCategoryLogo from '../../assets/img/rea-network.png'
-import webCategoryLogo from '../../assets/img/rea-web.png'
-import soleoTmbl from '../../assets/img/thumbnail-soleo.jpg'
-import hotelTmbl from '../../assets/img/thumbnail-hotel.jpg'
-import passerelleTmbl from '../../assets/img/thumbnail-passerelle.jpg'
+import { environment } from "../../environment";
 import { NavbarEvent } from '../../model/NavbarEvent';
+import { RealisationSection } from '../../model/environment';
 
 class Realisations extends Component {
 
 	public props: any
-	public state: { navbarEvent: NavbarEvent }
+	public state: { navbarEvent: NavbarEvent, currentDescription: JSX.Element, currentPictures: Array<JSX.Element> }
 
 	constructor(props: { navbarListeners: any }) {
 		super(props);
@@ -21,14 +17,20 @@ class Realisations extends Component {
 				isSmalScreen: false,
 				isScrollTop: true,
 				isScrollBottom: false
-			}
+			},
+			currentDescription: <p>Loading...</p>,
+			currentPictures: []
 		}
+
 	}
 
 	/**
 	 * Called immediately after a component is mounted.
 	 */
 	componentDidMount() {
+		// call the section click function to 'simulate' the click on the first section
+		this.handleSectionClick('dev');
+
 		// add onNavbarEvent callback on navbar event listeners
 		this.props.navbarListeners.push(this.onNavbarEvent);
 	}
@@ -46,7 +48,7 @@ class Realisations extends Component {
 	}
 
 
-	private getCategoriesClass(): string {
+	private getSectionClass(): string {
 		return !this.state.navbarEvent.isScrollTop ? "notTopScrollCatMargin" : "";
 	}
 
@@ -54,28 +56,60 @@ class Realisations extends Component {
 		return !this.state.navbarEvent.isScrollTop ? "notTopScrollPresMargin" : "";
 	}
 
+	/**
+	 * Get the section id and set the state with the new description and the new picture regarding to the new selected section
+	 */
+	private handleSectionClick: (id: string) => void = (id: string) => {
+		let section: RealisationSection | undefined = environment.initConfig.realisations.sections.find((element: RealisationSection) => {
+			return element.id === id;
+		});
+
+		if (section) {
+
+			// we're displaying the first project of the section (desc and pictures)
+			let description: JSX.Element = <div><p>{section.projects[0].description}</p><p className='keywords'>{section.projects[0].keywords}</p></div>;
+			let pictures: Array<JSX.Element> = [];
+
+			section.projects[0].pictures.forEach(picture => {
+				pictures.push(<p><img alt={picture.description} src={picture.source} /></p>);
+			});
+
+			this.setState({
+				currentDescription: description,
+				currentPictures: pictures
+			});
+		}
+
+	};
+
+	renderSections() {
+		let result: Array<JSX.Element> = [];
+
+		environment.initConfig.realisations.sections.forEach((section: RealisationSection) => {
+			result.push(
+				<img key={section.id} onClick={this.handleSectionClick.bind(this, section.id)} alt={section.alt} src={section.icon} />
+			);
+		});
+
+		return result;
+	}
+
 	render() {
 		return (
 			<div>
 				<div id="corps">
-					<div id="categories" className={this.getCategoriesClass()}>
-						<img alt="Web Category" src={webCategoryLogo} />
-						<img alt="Dev Category" src={devCategoryLogo} />
-						<img alt="Network Category" src={netCategoryLogo} />
+					<div id="sections" className={this.getSectionClass()}>
+						{this.renderSections()}
 					</div>
 					<div id="presentation" className={this.getDescriptionClass()}>
 						<div id="descriptionContainer">
-							<p>- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils
-							utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.</p>
-							<p className='keywords'>HTML - CSS - JavaScript(JQuery) - PHP - MySQL.</p>
+							{this.state.currentDescription}
 						</div>
 
 					</div>
 				</div>
 				<div id="pictures">
-					<p><img alt="Thumbnail soleo" src={soleoTmbl} /></p>
-					<p><img alt="Thumbnail hotel" src={hotelTmbl} /></p>
-					<p><img alt="Thumbnail passerelle" src={passerelleTmbl} /></p>
+					{this.state.currentPictures}
 				</div>
 			</div>
 		);
