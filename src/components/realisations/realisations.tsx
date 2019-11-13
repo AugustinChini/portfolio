@@ -1,4 +1,4 @@
-import React, { Component, MouseEvent } from 'react';
+import React, { Component } from 'react';
 import './realisations.css';
 import { environment } from "../../environment";
 import { NavbarEvent } from '../../model/NavbarEvent';

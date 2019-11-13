@@ -106,7 +106,7 @@ export class ApplicationIdProvider {
 }
 
 /**
- * AnimationManager wrap the Velocity lib API, to prevent multi call to animate methode
+ * AnimationManager wrap the Velocity lib API, to schedule all the animations within the app
  */
 export class AnimationManager {
     private static instance: AnimationManager;
@@ -131,10 +131,8 @@ export class AnimationManager {
         if (id === "immediate") {
             // run the Velocity animation
             Velocity.animate(elements, properties, options);
-            console.log("imm", properties)
         } else if (this.runningAnimationsId.indexOf(id) === -1) {
-            console.log(properties)
-            // we're about to start an animation so set the hasRunningAnimation to true
+            // we're about to start an animation so let's add the anim id in the running animation array
             this.runningAnimationsId.push(id);
 
             // if there is already a complete function we have to save it and reexecute it after the updating the animation Array
