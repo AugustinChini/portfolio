@@ -67,7 +67,7 @@ class Realisations extends Component {
 		if (section) {
 
 			// we're displaying the first project of the section (desc and pictures)
-			let description: JSX.Element = <div><p>{section.projects[0].description}</p><p className='keywords'>{section.projects[0].keywords}</p></div>;
+			let description: JSX.Element = <div id="descriptionGroupe"><p>{section.projects[0].description}</p><p className='keywords'>{section.projects[0].keywords}</p></div>;
 			let pictures: Array<JSX.Element> = [];
 
 			section.projects[0].pictures.forEach( (picture, index) => {

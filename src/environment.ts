@@ -163,15 +163,15 @@ export const environment: Environment = {
 			sections: [
 				{
 					title: "Enseignements",
-					htmlContent: "<h1>Test de contenu</h1>"
+					htmlContent: "<h1>Test de contenu Enseignements</h1>"
 				},
 				{
 					title: "Expériences professionnelles",
-					htmlContent: "<h1>Test de contenu</h1>"
+					htmlContent: "<h1>Test de contenu Expériences professionnelles</h1>"
 				},
 				{
 					title: "Technologies",
-					htmlContent: "<h1>Test de contenu</h1>"
+					htmlContent: "<h1>Test de contenu Technologies</h1>"
 				}
 			]
 		}

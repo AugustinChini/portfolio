@@ -79,21 +79,22 @@
 
 @media screen and (max-width: 1425px) {
     .mainContainer {
-        font-family: courier;
-        font-size: 20px;
         width: 60%;
-        margin: 100px 0 100px 20%;
-        text-align: left;
     }
 }
 
 @media screen and (max-width: 1155px) {
     .mainContainer {
-        font-family: courier;
-        font-size: 20px;
         width: 75%;
-        margin: 100px 0 100px 12.5%;
-        text-align: left;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .imgContainer {
+        display: none;
+    }
+    .descriptionContainer {
+        width: calc(100% - 100px);
     }
 }
 
