@@ -56,8 +56,21 @@ export interface Realisations {
     sections: RealisationSection[];
 }
 
+export interface CvSection {
+    title: string
+	htmlContent: string
+}
+
+export interface Cv {
+    title: string;
+    subtitle: string;
+    description: string;
+    sections: Array<CvSection>
+}
+
 export interface InitConfig {
     navBar: NavBar;
     home: Home;
     realisations: Realisations;
+    cv: Cv;
 }

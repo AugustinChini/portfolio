@@ -70,8 +70,8 @@ class Realisations extends Component {
 			let description: JSX.Element = <div><p>{section.projects[0].description}</p><p className='keywords'>{section.projects[0].keywords}</p></div>;
 			let pictures: Array<JSX.Element> = [];
 
-			section.projects[0].pictures.forEach(picture => {
-				pictures.push(<p><img alt={picture.description} src={picture.source} /></p>);
+			section.projects[0].pictures.forEach( (picture, index) => {
+				pictures.push(<p key={"rea_pic_" + index}><img alt={picture.description} src={picture.source} /></p>);
 			});
 
 			this.setState({
@@ -105,7 +105,6 @@ class Realisations extends Component {
 						<div id="descriptionContainer">
 							{this.state.currentDescription}
 						</div>
-
 					</div>
 				</div>
 				<div id="pictures">

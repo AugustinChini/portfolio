@@ -100,24 +100,24 @@ export const environment: Environment = {
 					projects: [
 						{
 							title: "Mon titre 1",
-							description: "Je suis une description",
+							description: "- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
 							icon: "./assets/img/dev.jpg",
 							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Gestion d'hotel",
+									description: "Thumbnail hotel",
+									source: hotelTmbl
 								},
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Soleo",
+									description: "Thumbnail soleo",
+									source: soleoTmbl
 								},
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Association Passerelle",
+									description: "Thumbnail passerelle",
+									source: passerelleTmbl
 								}
 							]
 						}
@@ -131,28 +131,47 @@ export const environment: Environment = {
 					projects: [
 						{
 							title: "Mon titre 1",
-							description: "Je suis une description",
+							description: "- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
 							icon: "./assets/img/dev.jpg",
 							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Association Passerelle",
+									description: "Thumbnail passerelle",
+									source: passerelleTmbl
 								},
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Soleo",
+									description: "Thumbnail soleo",
+									source: soleoTmbl
 								},
 								{
-									title: "Le titre d'une photo",
-									description: "Je suis une autre descrption",
-									source: "./assets/img/dev.jpg"
+									title: "Gestion d'hotel",
+									description: "Thumbnail hotel",
+									source: hotelTmbl
 								}
 							]
 						}
 					]
+				}
+			]
+		},
+		cv: {
+			title: "Mon CV",
+			subtitle: "",
+			description: "Vous pouvez consulter mon CV en ligne ci-dessous, ou bien le telecharger au format PDF en cliquand sur l'icone en bas de page. si vous avez des questions je suis a votre disposition, n'hesitez pas a me contacter et a organiser un entretiens.",
+			sections: [
+				{
+					title: "Enseignements",
+					htmlContent: "<h1>Test de contenu</h1>"
+				},
+				{
+					title: "Expériences professionnelles",
+					htmlContent: "<h1>Test de contenu</h1>"
+				},
+				{
+					title: "Technologies",
+					htmlContent: "<h1>Test de contenu</h1>"
 				}
 			]
 		}
