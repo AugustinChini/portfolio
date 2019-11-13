@@ -159,19 +159,61 @@ export const environment: Environment = {
 		cv: {
 			title: "Mon CV",
 			subtitle: "",
-			description: "Vous pouvez consulter mon CV en ligne ci-dessous, ou bien le telecharger au format PDF en cliquand sur l'icone en bas de page. si vous avez des questions je suis a votre disposition, n'hesitez pas a me contacter et a organiser un entretiens.",
+			description: "Vous pouvez consulter mon CV en ligne ci-dessous, ou bien le telecharger au format PDF en cliquand sur l'icone flottant. si vous avez des questions je suis a votre disposition, n'hesitez pas a me contacter et a organiser un entretiens.",
 			sections: [
 				{
 					title: "Enseignements",
-					htmlContent: "<h1>Test de contenu Enseignements</h1>"
+					htmlContent:
+					`<ul>
+						<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+						<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+						<li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+						<li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+				 	</ul>`
 				},
 				{
 					title: "Expériences professionnelles",
-					htmlContent: "<h1>Test de contenu Expériences professionnelles</h1>"
+					htmlContent:
+					`<table>
+						<thead>
+						<tr>
+							<th> dapibus, neque id cur</th>
+							<th>quam quam lectus, fa</th>
+							<th>dapibus, neque id cursus faucibus, tortor neque egestas augu</th>
+							<th>entesque fermentum dol</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>entesque fermentum dol</td>
+							<td> dapibus, neque id cur</td>
+							<td>ue fermentum do</td>
+							<td>quam quam lectus, fa</td>
+						</tr>
+						<tr>
+							<td>us faucibus, tortor ne</td>
+							<td> dapibus, neque id cur</td>
+							<td>ue a lectu</td>
+							<td>dapibus, neque id cursus faucibus, tortor neque egestas augu</td>
+						</tr>
+						<tr>
+							<td>quam quam lectus, fa</td>
+							<td>ue fermentum do</td>
+							<td>entesque fermentum dol</td>
+							<td>dapibus, neque id cur</td>
+						</tr>
+						</tbody>
+				  </table>`
 				},
 				{
 					title: "Technologies",
-					htmlContent: "<h1>Test de contenu Technologies</h1>"
+					htmlContent:
+					`<ul>
+						<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
+						<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
+						<li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
+						<li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
+				 	</ul>`
 				}
 			]
 		}

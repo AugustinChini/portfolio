@@ -1,0 +1,68 @@
+.container {
+    margin-top: 250px;
+    width: 100%;
+    height: 100%;
+}
+
+.sectionContainer {
+    color: #000;
+    height: 400px;
+}
+
+.headerGroup {
+    padding: 0 5% 10px 5%;
+}
+
+.sectionTitle {
+    background-color: #3c3c3c;
+    font-size: 22px;
+    height: 55px;
+    padding-top: 12px;
+}
+
+.sectionTitle h3 {
+    margin: 0;
+}
+
+.cvContent {
+    height: 500px;
+    background-color: #feae17;
+    padding: 10px;
+    text-align: justify;
+}
+
+.cvTitle {
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.cvDescription {
+    width: 100%;
+    text-align: left;
+    font-family: courier;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.downloadAnimationContainer {
+    width: 100%;
+    height: 100px;
+}
+
+.downloadButton {
+    border-radius: 35px 35px 35px 35px;
+    box-shadow: inset -7px -7px 15px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: inset -7px -7px 15px rgba(0, 0, 0, .5);
+    cursor: pointer;
+    padding: 5px;
+    width: 60px;
+    height: 60px;
+    border: solid #777 1px;
+}
+
+.icon {
+    width: 38px;
+    height: 42px;
+    fill: #505050;
+}
