@@ -1,5 +1,9 @@
 /*------LINKS------*/
 
+#navbar {
+    font-family: roboto-thin, sans-serif;
+}
+
 .link {
     color: #fff;
     cursor: pointer;

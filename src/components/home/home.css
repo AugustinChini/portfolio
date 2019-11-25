@@ -9,6 +9,7 @@
     width: 50%;
     margin: 100px 0 100px 25%;
     text-align: left;
+    text-align: justify;
 }
 
 .highlight {
@@ -81,11 +82,17 @@
     .mainContainer {
         width: 60%;
     }
+    .mainContainer {
+        margin: 100px 0 100px 20%;
+    }
 }
 
 @media screen and (max-width: 1155px) {
     .mainContainer {
         width: 75%;
+    }
+    .mainContainer {
+        margin: 100px 0 100px 12%;
     }
 }
 
