@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
-import UseAnimations from 'react-useanimations';
 import './footer.css';
+import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 
 class Footer extends Component {
 
     public microAnimationCustomInlineStyle: any = {
         width: '25px',
-        paddingLeft: '2px',
-        paddingTop: '4px',
+        height: '25px',
+        marginTop: '2px',
         color: '#505050' 
     }
 
     onContactLinkCliked = () => {
-
     };
 
     render() {
@@ -32,17 +31,17 @@ class Footer extends Component {
                         <p>Contactez moi :</p>
                         <div className="contactButton orangeBgrd footerContactButton github">
                             <span onClick={this.onContactLinkCliked}>
-                                <UseAnimations animationKey="github" style={this.microAnimationCustomInlineStyle} />
+                                <FaGithub style={this.microAnimationCustomInlineStyle} />
                             </span>
                         </div>
                         <div className="contactButton orangeBgrd white footerContactButton">
                             <span onClick={this.onContactLinkCliked}>
-                                <UseAnimations animationKey="linkedin" style={this.microAnimationCustomInlineStyle} />
+                                <FaLinkedinIn style={this.microAnimationCustomInlineStyle} />
                             </span>
                         </div>
                         <div id="contact-footer-button" className="contactButton orangeBgrd white footerContactButton">
                             <span onClick={this.onContactLinkCliked}>
-                                <UseAnimations animationKey="mail" style={this.microAnimationCustomInlineStyle} />    
+                                <FaEnvelope style={this.microAnimationCustomInlineStyle} />
                             </span>
                         </div>
                     </div>
