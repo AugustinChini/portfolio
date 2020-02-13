@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
 
 class Footer extends Component {
 
-    public microAnimationCustomInlineStyle: any = {
+    private microAnimationCustomInlineStyle: any = {
         width: '25px',
         height: '25px',
         marginTop: '2px',
@@ -12,6 +12,7 @@ class Footer extends Component {
     }
 
     onContactLinkCliked = () => {
+        
     };
 
     render() {
@@ -22,22 +23,22 @@ class Footer extends Component {
                     <div className="siteMapContainer">
                         <p>Pan du site:</p>
                         <ul>
-                            <li>Accueil</li>
-                            <li>CV</li>
-                            <li>Realisations</li>
+                            <li className="footerLink"><a href="/">Accueil</a></li>
+                            <li className="footerLink"><a href="/cv">CV</a></li>
+                            <li className="footerLink"><a href="/realisations">Realisations</a></li>
                         </ul>
                     </div>
                     <div className="contactContainer">
                         <p>Contactez moi :</p>
                         <div className="contactButton orangeBgrd footerContactButton github">
-                            <span onClick={this.onContactLinkCliked}>
+                            <a target="_blank" rel="noopener noreferrer" href="https://github.com/AugustinChini">
                                 <FaGithub style={this.microAnimationCustomInlineStyle} />
-                            </span>
+                            </a>
                         </div>
                         <div className="contactButton orangeBgrd white footerContactButton">
-                            <span onClick={this.onContactLinkCliked}>
+                            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/augustin-chini-a32266101/">
                                 <FaLinkedinIn style={this.microAnimationCustomInlineStyle} />
-                            </span>
+                            </a>
                         </div>
                         <div id="contact-footer-button" className="contactButton orangeBgrd white footerContactButton">
                             <span onClick={this.onContactLinkCliked}>

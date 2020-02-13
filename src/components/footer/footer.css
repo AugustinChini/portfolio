@@ -23,6 +23,11 @@
         color: white;
     }
     
+    .footerLink a {
+        color: #fff;
+        text-decoration: underline;
+    }
+    
     .siteMapContainer {
         width: 25%;
         float: left;

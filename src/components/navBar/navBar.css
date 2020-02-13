@@ -1,7 +1,7 @@
 /*------LINKS------*/
 
 #navbar {
-    font-family: roboto-thin, sans-serif;
+    font-family: roboto-light, sans-serif;
 }
 
 .link {
@@ -63,7 +63,7 @@
 }
 
 #navBarLogo:hover {
-    height: 100px;
+    height: 100px !important;
     -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     -ms-transition: all 0.3s ease-out;

@@ -39,6 +39,7 @@ h2 {
 /********* MODAL END ***********/
 
 .contactButton {
+    display: inline-block;
     box-shadow: 3px 5px 4px -1px #2f2f2f;
     border-radius: 35px 35px 35px 35px;
     cursor: pointer;
