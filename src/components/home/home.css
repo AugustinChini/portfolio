@@ -36,7 +36,7 @@
 
 .descriptionContainer {
     /* 100% - taille image - taille inside triangle */
-    width: calc(100% - 250px - 100px);
+    width: calc(100% - 100px);
     height: 100%;
     float: left;
     text-align: center;
@@ -54,11 +54,15 @@
 .imgContainer {
     float: left;
     height: 100%;
+    margin: 0 30px 0 0;
 }
 
 .imgContainer img {
-    height: 60%;
-    margin: 20% 0 0 30px;
+    height: 110px;
+}
+
+.rightImgMargin {
+    margin: 0 30px 0 30px !important;
 }
 
 .insideTriangle {
@@ -93,6 +97,9 @@
     }
     .mainContainer {
         margin: 100px 0 100px 12%;
+    }
+    .imgContainer {
+        padding-top: 2%;
     }
 }
 

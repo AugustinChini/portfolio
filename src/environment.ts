@@ -68,10 +68,10 @@ export const environment: Environment = {
 					alt: "dev section",
 					projects: [
 						{
-							title: "Mon titre 1",
+							title: "Curabitur vitae egestas metus",
 							description: "- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
-							icon: "./assets/img/dev.jpg",
-							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
+							thumbnail: soleoTmbl,
+							keywords: "PYTHON - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{
 									title: "Soleo",
@@ -89,6 +89,52 @@ export const environment: Environment = {
 									source: passerelleTmbl
 								}
 							]
+						},
+						{
+							title: "Nulla facilisi",
+							description: "-  De mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
+							thumbnail: hotelTmbl,
+							keywords: "ANGULAR 2+ - CSS - JavaScript(JQuery) - PHP - MySQL.",
+							pictures: [
+								{
+									title: "Gestion d'hotel",
+									description: "Thumbnail hotel",
+									source: hotelTmbl
+								},
+								{
+									title: "Soleo",
+									description: "Thumbnail soleo",
+									source: soleoTmbl
+								},
+								{
+									title: "Association Passerelle",
+									description: "Thumbnail passerelle",
+									source: passerelleTmbl
+								}
+							]
+						},
+						{
+							title: "Aliquam erat volutpat",
+							description: "- Stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
+							thumbnail: passerelleTmbl,
+							keywords: "CSS - JavaScript(JQuery) - PHP - MySQL.",
+							pictures: [
+								{
+									title: "Association Passerelle",
+									description: "Thumbnail passerelle",
+									source: passerelleTmbl
+								},
+								{
+									title: "Soleo",
+									description: "Thumbnail soleo",
+									source: soleoTmbl
+								},
+								{
+									title: "Gestion d'hotel",
+									description: "Thumbnail hotel",
+									source: hotelTmbl
+								}
+							]
 						}
 					]
 				},
@@ -101,7 +147,7 @@ export const environment: Environment = {
 						{
 							title: "Mon titre 1",
 							description: "- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
-							icon: "./assets/img/dev.jpg",
+							thumbnail: "./assets/img/dev.jpg",
 							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{
@@ -132,7 +178,7 @@ export const environment: Environment = {
 						{
 							title: "Mon titre 1",
 							description: "- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
-							icon: "./assets/img/dev.jpg",
+							thumbnail: "./assets/img/dev.jpg",
 							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
 							pictures: [
 								{

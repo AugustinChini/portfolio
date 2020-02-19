@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FaLaptopCode } from 'react-icons/fa';
 
 import { environment } from '../../environment'
 import { Section } from '../../model/environment'
@@ -18,13 +19,13 @@ class Home extends Component {
 			let isOdd: boolean = this.isOdd(index);
 			sections.push(
 				<div key={"section_" + index} className={"sectionsContainer whiteBgrd" + ( isOdd ? "" : " rightShadow")}>
-					<div className={"imgContainer " + ( isOdd ? "" : "floatRight")}>
-						<img src={section.picture} alt={section.alt} />
-					</div>
 
 					<div className={"descriptionContainer " + ( isOdd ? "" : "floatRight")}>
 						<div className="verticalAlignedContainer">
 							<div>
+								<div className={"imgContainer " + ( isOdd ? "" : "rightImgMargin floatRight")}>
+									<img src={section.picture} alt={section.alt} />
+								</div>
 								<p>{section.description}</p>
 
 							</div>

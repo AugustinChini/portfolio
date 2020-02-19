@@ -39,7 +39,7 @@ export interface Project {
     title: string;
     description: string;
     keywords: string;
-    icon: string;
+    thumbnail: string;
     pictures: Picture[];
 }
 
