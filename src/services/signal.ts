@@ -5,10 +5,17 @@ export abstract class Signal {
 
     /**
      * subscribe to the signal stream
+     * @param fct function to call when a message is sent
      * @param success success callback
      * @param error error callback
      */
-    public abstract subscribe(success: Function, error: Function): void;
+    public abstract subscribe(fct: Function, success?: Function, error?: Function): void;
+
+    /**
+     * unsubscribe to the signal stream
+     * @param fct function to call when a message is sent
+     */
+    public abstract unsubscribe(fct: Function): void;
 
     /**
      * send a message to the subscribers

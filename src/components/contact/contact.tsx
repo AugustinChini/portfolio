@@ -6,6 +6,8 @@ import { AnimationManager } from "../../services/utils";
 import { Link } from '../../model/environment';
 import { NavbarEvent } from '../../model/NavbarEvent';
 import { FaEnvelope } from 'react-icons/fa';
+import { modalSignal } from '../../components/app';
+import { Message } from '../../model/message';
 
 
 class Contact extends Component<ContactProps> {
@@ -42,6 +44,12 @@ class Contact extends Component<ContactProps> {
     componentDidMount() {
         // add onNavbarEvent callback on navbar event listeners
         this.props.navbarListeners.push(this.bottomAnimation);
+        // add a listener to the modal signal, if other components want to open the contact modal
+        modalSignal.subscribe((message: Message)=>{
+            if(message && message.code === 100 && message.type === 'open' && message.content === 'contact') {
+                this.onOpenModal();
+            }
+        });
     }
 
     componentWillUnmount() {

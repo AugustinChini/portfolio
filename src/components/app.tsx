@@ -11,6 +11,7 @@ import Cv from './cv/cv';
 import Contact from './contact/contact';
 import { NavbarEvent } from '../model/NavbarEvent';
 import { environment } from '../environment';
+import { ModalSignal } from '../services/modalSignal';
 
 const App: React.FC = () => {
   return (
@@ -28,6 +29,8 @@ const App: React.FC = () => {
     </div>
   );
 }
+
+export let modalSignal = new ModalSignal();
 
 // list of all the subsribers from child components
 let navbarListeners: Array<Function> = []

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './footer.css';
 import { FaGithub, FaLinkedinIn, FaEnvelope } from 'react-icons/fa';
+import { modalSignal } from '../../components/app';
 
 class Footer extends Component {
 
@@ -12,7 +13,11 @@ class Footer extends Component {
     }
 
     onContactLinkCliked = () => {
-        
+        modalSignal.send({
+            code: 100, // information code
+            type: 'open',
+            content: 'contact' 
+        });
     };
 
     render() {
