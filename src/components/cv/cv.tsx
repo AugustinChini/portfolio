@@ -5,6 +5,26 @@ import DOMPurify from 'dompurify';
 
 class Cv extends Component {
 
+  /**
+   * Called immediately after a component is mounted. Setting state here will trigger re-rendering.
+   */
+  componentDidMount() {
+	// get the page container
+	let pageContainerElement: any = document.getElementsByClassName("pageContainer")[0];
+	
+	if (pageContainerElement && pageContainerElement.style) {
+		pageContainerElement.style.backgroundColor = "#feae17";
+	}
+
+  }
+
+  /**
+   * Called immediately before a component is destroyed. Perform any necessary cleanup in this method, 
+   * such as cancelled network requests, or cleaning up any DOM elements created in componentDidMount.
+   */
+  componentWillUnmount() {
+  }
+
 
 	/**
 	 * Render the main sections on the CV
@@ -30,6 +50,7 @@ class Cv extends Component {
 					<h3 className="cvTitle">{environment.initConfig.cv.title}</h3>
 					<div className="cvDescription">{environment.initConfig.cv.description}</div>
 				</div>
+				{this.renderSections()}
 				<div id="download-button-wrapper">
 					<div id="download-button">
 					<svg className="download-icon" viewBox="0 0 20 20">
@@ -39,7 +60,6 @@ class Cv extends Component {
 					</div>
 					<div id="ballShadow"></div>			
 				</div>
-				{this.renderSections()}
 			</div>
 		);
 	}

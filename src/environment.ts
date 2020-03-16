@@ -1,6 +1,7 @@
 import { Environment } from "./model/environment"
 
-import devIcon from './assets/img/dev.jpg'
+import devIcon from './assets/img/test.png'
+import devIcon1 from './assets/img/test1.png'
 import devCategoryLogo from './assets/img/rea-dev.png'
 import netCategoryLogo from './assets/img/rea-network.png'
 import webCategoryLogo from './assets/img/rea-web.png'
@@ -47,7 +48,7 @@ export const environment: Environment = {
 					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eros dui, mattis vitae lorem in, sodales porttitor massa. Curabitur varius quam mauris, eget pellentesque diam pulvinar nec. Nulla facilisi. "
 				},
 				{
-					picture: devIcon,
+					picture: devIcon1,
 					alt: "description de logo",
 					description: "Consectetur adipiscing elit. Curabitur vitae egestas metus. amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. "
 				},

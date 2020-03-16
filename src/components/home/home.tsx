@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { FaLaptopCode } from 'react-icons/fa';
 
 import { environment } from '../../environment'
 import { Section } from '../../model/environment'

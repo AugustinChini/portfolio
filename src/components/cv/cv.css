@@ -6,7 +6,7 @@
 
 .sectionContainer {
     color: #000;
-    height: 455px;
+    /* height: 455px; */
 }
 
 .headerGroup {
@@ -15,7 +15,7 @@
 
 .sectionTitle {
     background-color: #3c3c3c;
-    font-size: 22px;
+    font-size: 20px;
     height: 55px;
     padding-top: 12px;
 }
@@ -25,6 +25,7 @@
 }
 
 .cvContent {
+    display: none;
     height: 400px;
     background-color: #feae17;
     padding: 10px;
@@ -49,7 +50,9 @@
 /** Download ball **/
 
 #download-button-wrapper {
-    margin-bottom: 80px;
+    position: absolute;
+    margin-top: 5%;
+    left: calc(50% - 90px);
 }
 
 #download-button {
@@ -57,8 +60,8 @@
     height: 55px;
     border-radius: 40px;
     margin-left: calc(50% - 85px);
-    background-color: #fcae17;
-    color: #fff;
+    color: #fcae17;
+    background-color: #fff;
     top: 0;
     box-shadow: 5px 5px 10px 0 #858585;
     animation: float 6s ease-in-out infinite;
@@ -69,7 +72,7 @@
 .download-icon {
     width: 30px;
     height: 35px;
-    fill: #ffffff;
+    fill: #fcae17;
     float: left;
     margin-top: 7px;
     margin-left: 12px;
