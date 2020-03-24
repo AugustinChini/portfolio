@@ -64,6 +64,7 @@ export interface CvSection {
 export interface Cv {
     title: string;
     subtitle: string;
+    downloadLink: string;
     description: string;
     sections: Array<CvSection>
 }

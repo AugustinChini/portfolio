@@ -140,7 +140,7 @@ export class AnimationManager {
                 let completeFunction: Function = options.complete;
                 options.complete = () => {
                     this.runningAnimationsId.splice(this.runningAnimationsId.indexOf(id), 1);
-                    completeFunction()
+                    completeFunction(elements);
                 }
             } else {
                 options.complete = () => {

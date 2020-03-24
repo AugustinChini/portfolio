@@ -206,6 +206,7 @@ export const environment: Environment = {
 		cv: {
 			title: "Mon CV",
 			subtitle: "",
+			downloadLink: "./assets/downloads/Curriculum_vitae_V3.1_FR.pdf",
 			description: "Vous pouvez consulter mon CV en ligne ci-dessous, ou bien le telecharger au format PDF en cliquand sur l'icone flottante. si vous avez des questions je suis a votre disposition, n'hesitez pas a me contacter et a organiser un entretiens.",
 			sections: [
 				{
