@@ -1,3 +1,5 @@
+import { HomeLink } from "./homeLink";
+
 export interface Environment {
     production: boolean;
     initConfig: InitConfig;
@@ -19,13 +21,16 @@ export interface NavBar {
 export interface Section {
     picture: string;
     alt: string;
+    anchor?: string;
     description: string;
 }
 
 export interface Home {
     title: string;
-    welcome: string;
-    highlight: string;
+    links?: Array<HomeLink>;
+    welcome?: string;
+    highlight?: string;
+    picture?: string;
     sections: Section[];
 }
 

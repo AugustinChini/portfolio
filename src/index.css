@@ -30,8 +30,16 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+    font-size: 3em;
+}
+
 #root {
     height: 100%;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 .hide {

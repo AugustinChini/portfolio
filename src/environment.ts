@@ -1,10 +1,11 @@
 import { Environment } from "./model/environment"
+import { FaMobileAlt, FaProjectDiagram, FaLaptopCode, FaDatabase } from 'react-icons/fa';
 
-import devIcon from './assets/img/test.png'
-import devIcon1 from './assets/img/test1.png'
+import mobilePicture from './assets/img/mobile.png'
 import devCategoryLogo from './assets/img/rea-dev.png'
 import netCategoryLogo from './assets/img/rea-network.png'
 import webCategoryLogo from './assets/img/rea-web.png'
+import laptopHomePicture from './assets/img/laptop.png'
 import soleoTmbl from './assets/img/thumbnail-soleo.jpg'
 import hotelTmbl from './assets/img/thumbnail-hotel.jpg'
 import passerelleTmbl from './assets/img/thumbnail-passerelle.jpg'
@@ -38,22 +39,45 @@ export const environment: Environment = {
 			]
 		},
 		home: {
-			title: "Bienvenue sur mon Portfolio",
-			highlight: "Augustin CHINI, jeune ingenieur curieux et passionné",
+			title: "Augustin CHINI",
+			links: [
+				{
+					url: "#dev",
+					icon: FaLaptopCode,
+					alt: "section développement"
+				}, {
+					url: "#network",
+					icon: FaProjectDiagram,
+					alt: "section réseau"
+				}, {
+					url: "#mobile",
+					icon: FaMobileAlt,
+					alt: "section mobile"
+				}, {
+					url: "#database",
+					icon: FaDatabase,
+					alt: "section mobile"
+				}
+			],
+			highlight: "jeune ingenieur curieux et passionné",
 			welcome: "Diplome a l'ISIMA en 2016. Principalement en contact avec des technologies web (JS, Angular, .NET ...) et des bases de donnees NoSQL. J'ai appris a me specialiser dans ces technologies qui sont aujourd'hui mes domaines d'experise. J'apprend et viens en aide avec plaisir dans l'environement ou j'evolue. Les relations humaines et les echanges au sein de l'equipe sont pour moi crucial pour mener a bien un projet.",
+			picture: laptopHomePicture,
 			sections: [
 				{
-					picture: devIcon,
+					picture: mobilePicture,
 					alt: "description de logo",
+					anchor: "dev",
 					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eros dui, mattis vitae lorem in, sodales porttitor massa. Curabitur varius quam mauris, eget pellentesque diam pulvinar nec. Nulla facilisi. "
 				},
 				{
-					picture: devIcon1,
+					picture: mobilePicture,
+					anchor: "network",
 					alt: "description de logo",
 					description: "Consectetur adipiscing elit. Curabitur vitae egestas metus. amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. "
 				},
 				{
-					picture: devIcon,
+					picture: mobilePicture,
+					anchor: "mobile",
 					alt: "description de logo",
 					description: "Amet, consectetur adipiscing elit. Curabitur vitae egestas metusUt elementum sed sapien a ornare. Vestibulum sed lectus id ipsum facilisis dictum et vel ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer euismod augue a libero feugiat, nec malesuada urna fermentum. Ut est ipsum, mattis at erat eget, pulvinar co"
 				}
