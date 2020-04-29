@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { environment } from '../../environment'
 import { Section } from '../../model/environment'
+import mobLaptop from '../../assets/img/mob_laptop.png'
 
 import './home.css';
 import { HomeLink } from '../../model/homeLink';
@@ -20,13 +21,9 @@ class Home extends Component {
 		environment.initConfig.home.sections.forEach((section: Section, index: number) => {
 			let isOdd: boolean = this.isOdd(index);
 			sections.push(
-				<div key={"section_" + index} className="sectionContainer">
-					<div className={"descriptionContainer " + ( isOdd ? "" : "floatRight")}>
-						<p>{section.description}</p>
-					</div>
-					<div className={"imgContainer " + ( isOdd ? "" : "rightImgMargin floatRight")}>
-						<img src={section.picture} alt={section.alt} />
-					</div>
+				<div key={"section_" + index} className={"sectionContainer " + ( isOdd ? "" : "flexReverse")}>
+					<p>{section.description}</p>
+					<img src={section.picture} alt={section.alt} />
 				</div>
 			)
 		});
@@ -73,6 +70,7 @@ class Home extends Component {
 						</div>
 						<span className="horizontalRuler"></span>
 						<p className="welcomeText">{environment.initConfig.home.welcome}</p>
+						<img className="mobLaptopPicture" src={mobLaptop} alt="mobile home laptop"></img>
 					</div>
 				</div>
 				{this.createSections()}

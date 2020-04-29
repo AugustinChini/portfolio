@@ -52,14 +52,99 @@
 
 .sectionContainer {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
 }
 
-.imgContainer img {
-    width: 20%;
+.flexReverse {
+    flex-direction: row-reverse !important;
 }
 
-.descriptionContainer {
-    margin: 100px 0 0 20px;
+.sectionContainer img {
+    width: 25%;
+}
+
+.sectionContainer p {
+    margin: 0 0 0 20px;
     width: 70%;
-    text-align: justify;
+    text-align: center;
+}
+
+.sectionContainer:last-child {
+    margin: 100px 0 100px 0;
+}
+
+.mobLaptopPicture {
+    display: none;
+}
+
+
+/* media queries*/
+
+@media screen and (max-width: 1200px) {
+    .homePicture {
+        width: 32%;
+    }
+    .mainContainer {
+        margin: 0;
+    }
+    .sectionContainer img {
+        width: 35%;
+    }
+    .sectionContainer p {
+        margin: 100px 0 0 20px;
+        width: 60%;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .homePicture {
+        width: 32%;
+        margin-top: 0;
+    }
+    .mainContainer {
+        margin: 0;
+    }
+    .homeLinksContainer {
+        width: 20%;
+        margin-left: 40%;
+    }
+    .sectionContainer img {
+        width: 45%;
+        margin-top: 50px;
+    }
+    .sectionContainer p {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .homePicture {
+        display: none;
+    }
+    .mainContainer {
+        width: 100%;
+        padding: 20px;
+    }
+    .homeLinksContainer {
+        width: 40%;
+        margin-left: 30%;
+    }
+    .mobLaptopPicture {
+        display: block;
+        width: 95%;
+        margin: 2%;
+        margin-top: 100px;
+    }
+    .sectionContainer img {
+        display: none;
+    }
+    .sectionContainer p {
+        width: 95%;
+        margin: 2%;
+    }
 }
