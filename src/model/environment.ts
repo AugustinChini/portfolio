@@ -70,6 +70,10 @@ export interface Cv {
     title: string;
     subtitle: string;
     downloadLink: string;
+    email: string;
+    phone: string;
+    localisation: string;
+    website: string;
     description: string;
     sections: Array<CvSection>
 }

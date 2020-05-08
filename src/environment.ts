@@ -45,21 +45,21 @@ export const environment: Environment = {
 			title: "Augustin CHINI",
 			links: [
 				{
-					url: "#dev",
-					icon: FaLaptopCode,
-					alt: "section développement"
-				}, {
-					url: "#network",
-					icon: FaProjectDiagram,
-					alt: "section réseau"
-				}, {
 					url: "#mobile",
 					icon: FaMobileAlt,
 					alt: "section mobile"
 				}, {
+					url: "#dev",
+					icon: FaLaptopCode,
+					alt: "section développement"
+				}, {
 					url: "#database",
 					icon: FaDatabase,
 					alt: "section mobile"
+				}, {
+					url: "#network",
+					icon: FaProjectDiagram,
+					alt: "section réseau"
 				}
 			],
 			highlight: "jeune ingenieur curieux et passionné",
@@ -69,24 +69,24 @@ export const environment: Environment = {
 				{
 					picture: mobilePicture,
 					alt: "description de logo",
-					anchor: "dev",
+					anchor: "mobile",
 					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eros dui, mattis vitae lorem in, sodales porttitor massa. Curabitur varius quam mauris, eget pellentesque diam pulvinar nec. Nulla facilisi. "
 				},
 				{
 					picture: laptopCodePicture,
-					anchor: "network",
+					anchor: "dev",
 					alt: "description de logo",
 					description: "Consectetur adipiscing elit. Curabitur vitae egestas metus. amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. "
 				},
 				{
 					picture: databasePicture,
-					anchor: "mobile",
+					anchor: "database",
 					alt: "description de logo",
 					description: "Amet, consectetur adipiscing elit. Curabitur vitae egestas metusUt elementum sed sapien a ornare. Vestibulum sed lectus id ipsum facilisis dictum et vel ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer euismod augue a libero feugiat, nec malesuada urna fermentum. Ut est ipsum, mattis at erat eget, pulvinar co"
 				},
 				{
 					picture: rj45Picture,
-					anchor: "mobile",
+					anchor: "network",
 					alt: "description de logo",
 					description: "Amet, consectetur adipiscing elit. Curabitur vitae egestas metusUt elementum sed sapien a ornare. Vestibulum sed lectus id ipsum facilisis dictum et vel ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer euismod augue a libero feugiat, nec malesuada urna fermentum. Ut est ipsum, mattis at erat eget, pulvinar co"
 				}
@@ -238,9 +238,13 @@ export const environment: Environment = {
 		},
 		cv: {
 			title: "Mon CV",
-			subtitle: "",
+			subtitle: "Eleve ingenieur",
+			email: "augustin.chini@achini.fr",
+			phone: "(+33) 665 12 34 56",
+			localisation: "Gaithersburg, MD (USA)",
+			website: "http://achini.fr",
 			downloadLink: "./assets/downloads/Curriculum_vitae_V3.1_FR.pdf",
-			description: "Vous pouvez consulter mon CV en ligne ci-dessous, ou bien le telecharger au format PDF en cliquand sur l'icone flottante. si vous avez des questions je suis a votre disposition, n'hesitez pas a me contacter et a organiser un entretiens.",
+			description: "",
 			sections: [
 				{
 					title: "Enseignements",

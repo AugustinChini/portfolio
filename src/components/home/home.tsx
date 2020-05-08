@@ -21,7 +21,7 @@ class Home extends Component {
 		environment.initConfig.home.sections.forEach((section: Section, index: number) => {
 			let isOdd: boolean = this.isOdd(index);
 			sections.push(
-				<div key={"section_" + index} className={"sectionContainer " + ( isOdd ? "" : "flexReverse")}>
+				<div key={"section_" + index} id={section.anchor} className={"sectionContainer " + ( isOdd ? "" : "flexReverse")}>
 					<p>{section.description}</p>
 					<img src={section.picture} alt={section.alt} />
 				</div>

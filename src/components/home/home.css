@@ -47,10 +47,11 @@
 
 .homePicture {
     width: 27%;
+    height: 100%;
     margin-top: -100px;
 }
 
-.sectionContainer {
+.homeSectionContainer {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -63,17 +64,17 @@
     flex-direction: row-reverse !important;
 }
 
-.sectionContainer img {
+.homeSectionContainer img {
     width: 25%;
 }
 
-.sectionContainer p {
+.homeSectionContainer p {
     margin: 0 0 0 20px;
     width: 70%;
     text-align: center;
 }
 
-.sectionContainer:last-child {
+.homeSectionContainer:last-child {
     margin: 100px 0 100px 0;
 }
 
@@ -91,10 +92,10 @@
     .mainContainer {
         margin: 0;
     }
-    .sectionContainer img {
+    .homeSectionContainer img {
         width: 35%;
     }
-    .sectionContainer p {
+    .homeSectionContainer p {
         margin: 100px 0 0 20px;
         width: 60%;
         text-align: center;
@@ -113,11 +114,11 @@
         width: 20%;
         margin-left: 40%;
     }
-    .sectionContainer img {
+    .homeSectionContainer img {
         width: 45%;
         margin-top: 50px;
     }
-    .sectionContainer p {
+    .homeSectionContainer p {
         width: 50%;
     }
 }
@@ -140,10 +141,10 @@
         margin: 2%;
         margin-top: 100px;
     }
-    .sectionContainer img {
+    .homeSectionContainer img {
         display: none;
     }
-    .sectionContainer p {
+    .homeSectionContainer p {
         width: 95%;
         margin: 2%;
     }

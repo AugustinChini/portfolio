@@ -1,5 +1,5 @@
-.container {
-    margin-top: 250px;
+.cvPageContainer {
+    margin-top: 150px;
     width: 100%;
     height: 100%;
 }
@@ -9,7 +9,21 @@
 }
 
 .headerGroup {
-    padding: 0 5% 10px 5%;
+    height: 400px;
+    background-color: #b1b1b1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.headerGroup img {
+    height: 100%;
+}
+
+.profileDescription {
+    color: #fff;
+    display: block;
+    margin-right: 3%;
 }
 
 .sectionTitle {
@@ -18,6 +32,7 @@
     font-size: 20px;
     height: 55px;
     padding-top: 12px;
+    text-align: center;
 }
 
 .sectionTitle h3 {
@@ -47,113 +62,33 @@
     margin-bottom: 50px;
 }
 
-
-/** Download button **/
-
-.download-button-container {
-    height: 400px;
+.contactContainer {
+    display: block;
     width: 100%;
-    background-color: #fcae17;
-    -webkit-box-shadow: 0 -5px 5px 0 #292929;
-    box-shadow: 0 -5px 5px 0 #292929;
+    text-align: left;
 }
 
-#download-button-wrapper {
-    position: absolute;
-    margin-top: 5%;
-    left: calc(50% - 90px);
-}
-
-#download-button {
-    width: 170px;
-    height: 55px;
-    border-radius: 40px;
-    margin-left: calc(50% - 85px);
-    color: #fcae17;
-    background-color: #fff;
-    top: 0;
-    box-shadow: 5px 5px 10px 0 #858585;
-    animation: float 6s ease-in-out infinite;
-    border: 1px solid #adadad;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-.download-icon {
-    width: 30px;
-    height: 35px;
-    fill: #fcae17;
-    float: left;
-    margin-top: 7px;
-    margin-left: 12px;
-}
-
-.button-text {
-    padding: 20px 5px 0 0;
+.contactContainer a {
+    color: #fff;
 }
 
 
-/* Animations */
+/* media queries*/
 
-@-webkit-keyframes float {
-    0% {
-        top: 0;
-    }
-    50% {
-        top: 10px;
-    }
-    100% {
-        top: 0;
+@media screen and (max-width: 1200px) {
+    .headerGroup {
+        height: 350px;
     }
 }
 
-@-moz-keyframes float {
-    0% {
-        top: 0;
-    }
-    50% {
-        top: 10px;
-    }
-    100% {
-        top: 0;
+@media screen and (max-width: 950px) {
+    .headerGroup {
+        height: 300px;
     }
 }
 
-@-o-keyframes float {
-    0% {
-        top: 0;
-    }
-    50% {
-        top: 10px;
-    }
-    100% {
-        top: 0;
-    }
-}
-
-@-ms-keyframes float {
-    0% {
-        top: 0;
-    }
-    50% {
-        top: 10px;
-    }
-    100% {
-        top: 0;
-    }
-}
-
-@keyframes float {
-    0% {
-        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        transform: translatey(0px);
-    }
-    50% {
-        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
-        transform: translatey(-7px);
-    }
-    100% {
-        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
-        transform: translatey(0px);
+@media screen and (max-width: 840px) {
+    .headerGroup img {
+        display: none;
     }
 }
