@@ -33,7 +33,7 @@ class Footer extends Component {
                             <li className="footerLink"><a href="/realisations">Realisations</a></li>
                         </ul>
                     </div>
-                    <div className="contactContainer">
+                    <div className="footerContactContainer">
                         <p>Contactez moi :</p>
                         <div className="contactButton orangeBgrd footerContactButton github">
                             <a target="_blank" rel="noopener noreferrer" href="https://github.com/AugustinChini">

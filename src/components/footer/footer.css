@@ -19,6 +19,8 @@
     .footerContainer {
         width: 100%;
         height: 100px;
+        display: flex;
+        justify-content: space-between;
         background-color: rgb(58, 58, 58);
         color: white;
     }
@@ -51,13 +53,15 @@
         padding-bottom: 5px;
     }
     
-    .contactContainer {
+    .footerContactContainer {
+        display: block;
+        text-align: center;
         width: 50%;
         float: left;
         text-align: center;
     }
     
-    .contactContainer p {
+    .footerContactContainer p {
         font-weight: bold;
         font-size: 16px;
         margin: 10px 0 10px 0;

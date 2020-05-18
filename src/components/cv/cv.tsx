@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaEnvelopeOpenText, FaSearchLocation, FaPhone, FaLink } from 'react-icons/fa';
+import { FaEnvelopeOpenText, FaSearchLocation, FaPhone, FaLink, FaDownload } from 'react-icons/fa';
 import './cv.css';
 import profilePicture from '../../assets/img/profile.png'
 import { environment } from "../../environment";
@@ -9,6 +9,13 @@ import { AnimationManager } from '../../services/utils';
 class Cv extends Component {
 	
 	private pageContainerElement: any;
+
+    private microAnimationCustomInlineStyle: any = {
+        width: '40px',
+        height: '28px',
+        marginTop: '5px',
+        color: '#505050' 
+    }
 
 	/**
 	 * Called immediately after a component is mounted. Setting state here will trigger re-rendering.
@@ -107,7 +114,7 @@ class Cv extends Component {
 				<div className="headerGroup">
 					<div className="profileDescription">
 						<h3 className="cvTitle">{environment.initConfig.cv.title}</h3>
-						<strong className="cvTitle">{environment.initConfig.cv.subtitle}</strong>
+						<span className="cvSubTitle">{environment.initConfig.cv.subtitle}</span>
 						<div className="cvDescription">{environment.initConfig.cv.description}</div>
 						<div className="contactContainer">
 							<FaEnvelopeOpenText /> <a href={"mailto:" + environment.initConfig.cv.email}>{environment.initConfig.cv.email}</a>
@@ -121,6 +128,11 @@ class Cv extends Component {
 						<div className="contactContainer">
 							<FaLink /> <a href={environment.initConfig.cv.website}> {environment.initConfig.cv.website}</a>
 						</div>
+					</div>
+					<div className={"downloadButton orangeBgrd white"}>
+						<span>
+							<FaDownload style={this.microAnimationCustomInlineStyle} />
+						</span>
 					</div>
 					<img src={profilePicture}/>
 				</div>

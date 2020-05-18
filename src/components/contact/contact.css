@@ -20,6 +20,31 @@ h2 {
     transition: all 1s ease-in-out;
 }
 
+.contactButton {
+    display: inline-block;
+    box-shadow: 3px 5px 4px -1px #2f2f2f;
+    border-radius: 35px 35px 35px 35px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.contactButton:hover {
+    bottom: 30px;
+}
+
+.myButton:hover {
+    background-color: #ffffff;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.navbarClassOveride {
+    position: relative !important;
+}
+
 
 /********* MODAL ***********/
 
@@ -37,33 +62,6 @@ h2 {
 
 
 /********* MODAL END ***********/
-
-.contactButton {
-    display: inline-block;
-    box-shadow: 3px 5px 4px -1px #2f2f2f;
-    border-radius: 35px 35px 35px 35px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-.myButton:hover {
-    background-color: #ffffff;
-}
-
-.myButton:active {
-    position: relative;
-    top: 1px;
-}
-
-.icon {
-    width: 50px;
-    height: 45px;
-    fill: #505050;
-}
-
-.navbarClassOveride {
-    position: relative !important;
-}
 
 
 /********* FORM ***********/
