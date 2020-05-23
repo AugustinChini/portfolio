@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FaEnvelopeOpenText, FaSearchLocation, FaPhone, FaLink, FaDownload } from 'react-icons/fa';
 import './cv.css';
 import profilePicture from '../../assets/img/profile.png'
-import { environment } from "../../environment";
+import { environment } from '../../environment';
 import DOMPurify from 'dompurify';
 import { AnimationManager } from '../../services/utils';
 
@@ -123,7 +123,7 @@ class Cv extends Component {
 							<FaPhone /> <a href={"tel:" + environment.initConfig.cv.phone}>{environment.initConfig.cv.phone}</a>
 						</div>
 						<div className="contactContainer">
-							<FaSearchLocation /> {environment.initConfig.cv.localisation}
+							<FaSearchLocation /> <a target='_blank' rel="noopener noreferrer" href={environment.initConfig.cv.localisation.url}>{environment.initConfig.cv.localisation.name}</a>
 						</div>
 						<div className="contactContainer">
 							<FaLink /> <a href={environment.initConfig.cv.website}> {environment.initConfig.cv.website}</a>
@@ -131,10 +131,10 @@ class Cv extends Component {
 					</div>
 					<div className={"downloadButton orangeBgrd white"}>
 						<span>
-							<FaDownload style={this.microAnimationCustomInlineStyle} />
+							<a target='_blank' rel="noopener noreferrer" href="/downloads/augustin_chini.pdf"><FaDownload style={this.microAnimationCustomInlineStyle} /></a>
 						</span>
 					</div>
-					<img src={profilePicture}/>
+					<img alt="profile" src={profilePicture}/>
 				</div>
 				
 				{this.renderSections()}

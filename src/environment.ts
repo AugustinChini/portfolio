@@ -241,7 +241,10 @@ export const environment: Environment = {
 			subtitle: "Eleve ingenieur",
 			email: "augustin.chini@achini.fr",
 			phone: "(+33) 665 12 34 56",
-			localisation: "Gaithersburg, MD (USA)",
+			localisation: {
+				name: "Gaithersburg, MD (USA)",
+				url: "https://www.google.com/maps/place/Gaithersburg,+Maryland"
+			},
 			website: "http://achini.fr",
 			downloadLink: "./assets/downloads/Curriculum_vitae_V3.1_FR.pdf",
 			description: "",
@@ -249,68 +252,100 @@ export const environment: Environment = {
 				{
 					title: "Enseignements",
 					htmlContent:
-					`<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-					<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-					<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
-					<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-					<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-					<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
-					<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-					<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-					<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
-					<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-					<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-					<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
-					<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-					<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-					<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
-					<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-					<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-					<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>`
+					`
+						<p>&minus; <strong class="d-inline">2009-2018: </strong>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
+						<p>&minus; <strong class="d-inline">2009-2018: </strong>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+						<p>&minus; <strong class="d-inline">2009-2018: </strong>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</p>
+						<p>&minus; <strong class="d-inline">2009-2018: </strong>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>`
 				},
 				{
 					title: "Expériences professionnelles",
 					htmlContent:
-					`<table>
-						<thead>
-						<tr>
-							<th> dapibus, neque id cur</th>
-							<th>quam quam lectus, fa</th>
-							<th>dapibus, neque id cursus faucibus, tortor neque egestas augu</th>
-							<th>entesque fermentum dol</th>
-						</tr>
-						</thead>
+					`<table class="w-100" style="padding: .3em">
 						<tbody>
-						<tr>
-							<td>entesque fermentum dol</td>
-							<td> dapibus, neque id cur</td>
-							<td>ue fermentum do</td>
-							<td>quam quam lectus, fa</td>
-						</tr>
-						<tr>
-							<td>us faucibus, tortor ne</td>
-							<td> dapibus, neque id cur</td>
-							<td>ue a lectu</td>
-							<td>dapibus, neque id cursus faucibus, tortor neque egestas augu</td>
-						</tr>
-						<tr>
-							<td>quam quam lectus, fa</td>
-							<td>ue fermentum do</td>
-							<td>entesque fermentum dol</td>
-							<td>dapibus, neque id cur</td>
-						</tr>
+							<tr>
+								<td style="width:50%;border-right:solid 2px #0072d4">
+									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
+									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+								</td>
+								<td style="width:50%">
+									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
+									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:50%;border-right:solid 2px #0072d4">
+									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
+									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+								</td>
+								<td style="width:50%">
+									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
+									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:50%;border-right:solid 2px #0072d4">
+									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
+									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+								</td>
+							</tr>
 						</tbody>
 				  </table>`
 				},
 				{
 					title: "Technologies",
 					htmlContent:
-					`<ul>
-						<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
-						<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
-						<li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
-						<li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
-				 	</ul>`
+					`<table class="w-100" style="padding: .3em">
+						<tbody>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+								<td style="width:33%;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+								<td style="width:33%;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+								<td style="width:33%;text-align:center">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> HTML / CSS</strong>
+								</td>
+							</tr>
+						</tbody>
+				  </table>`
 				}
 			]
 		}

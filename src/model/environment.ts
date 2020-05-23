@@ -1,4 +1,5 @@
 import { HomeLink } from "./homeLink";
+import { Localisation } from "./Localisation";
 
 export interface Environment {
     production: boolean;
@@ -72,7 +73,7 @@ export interface Cv {
     downloadLink: string;
     email: string;
     phone: string;
-    localisation: string;
+    localisation: Localisation;
     website: string;
     description: string;
     sections: Array<CvSection>

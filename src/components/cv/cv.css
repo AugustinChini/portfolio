@@ -126,10 +126,6 @@
         top: 304px;
         right: 373px;
     }
-    .homeLinksContainer {
-        width: 20%;
-        margin-left: 40%;
-    }
 }
 
 @media screen and (max-width: 950px) {
@@ -155,10 +151,6 @@
     .downloadButton:hover {
         top: 273px;
         right: 322px;
-    }
-    .homeLinksContainer {
-        width: 25%;
-        margin-left: 38%;
     }
 }
 

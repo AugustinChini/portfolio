@@ -87,12 +87,20 @@ class Realisations extends Component {
 	 * Get the project and set the state with the new selected project
 	 * @param project the project object
 	 */
-	private loadProject: (project: Project) => void = (project: Project) => {
+	private loadProject: (project: Project, pictureIndex: number) => void = (project: Project) => {
 		this.setState({
 			currentDescription: this.renderDescriptionBlock(project.title, project.description, project.keywords)
 		});
 		this.projectPictures = []
 		this.setProjectPictures(project);
+
+		// apply the active class to the selected project picture
+		let picturesElement = document.getElementById("pictures");
+		let selectedpicture = undefined;
+		if (picturesElement) 
+			selectedpicture = picturesElement.getElementsByTagName('img')
+			
+
 	}
 
 	/**
@@ -111,7 +119,7 @@ class Realisations extends Component {
 			let pictures: Array<JSX.Element> = [];
 
 			section.projects.forEach( (project: Project, index) => {
-				pictures.push(<p key={"rea_pic_" + index}><img onClick={this.loadProject.bind(this, project)} alt={project.title} src={project.thumbnail} /></p>);
+				pictures.push(<p key={"rea_pic_" + index}><img onClick={this.loadProject.bind(this, project, index)} alt={project.title} src={project.thumbnail} /></p>);
 			});
 
 			this.setState({
@@ -144,7 +152,7 @@ class Realisations extends Component {
 	 * @param keywords current keywords
 	 */
 	renderDescriptionBlock(title: string, description: string, keywords: string): JSX.Element{
-		return <div id="descriptionGroupe">
+		return <div>
 				<h3 className="reaTitle">{title}</h3>
 				<p>{description}</p>
 				<p className='keywords'>{keywords}</p>
@@ -155,7 +163,6 @@ class Realisations extends Component {
 						</svg>
 						<div className="button-text">DETAILS</div>
 					</div>
-					<div id="ballShadow"></div>			
 				</div>
 			</div>;
 	}
@@ -175,18 +182,16 @@ class Realisations extends Component {
 	render() {
 		return (
 			<div>
-				<div id="corps">
-					<div id="sections" className={this.getSectionClass()}>
-						{this.renderSections()}
-					</div>
-					<div id="presentation" className={this.getDescriptionClass()}>
-						<div id="descriptionContainer">
-							{this.state.currentDescription}
-						</div>
-					</div>
+				<div id="sections" className={this.getSectionClass()}>
+					{this.renderSections()}
 				</div>
 				<div id="pictures">
 					{this.state.currentPictures}
+				</div>
+				<div id="presentation" className={this.getDescriptionClass()}>
+					<div id="descriptionContainer">
+						{this.state.currentDescription}
+					</div>
 				</div>
 				{this.state.galleryOpened ? <div>
 						<button className="close-gallery-button" onClick={this.toggleGallery.bind((this))}>X</button>
