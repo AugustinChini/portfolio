@@ -70,7 +70,7 @@ class NavBar extends Component {
     }, 500);
     this.scrollCallback = throttle(() => {
       this.scrollFunction()
-    }, 100);
+    }, 200);
     window.addEventListener('resize', this.resizeCallback);
     window.addEventListener('scroll', this.scrollCallback);
 

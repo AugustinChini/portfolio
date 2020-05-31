@@ -50,7 +50,7 @@ class Realisations extends Component {
 	 */
 	componentDidMount() {
 		// call the section click function to 'simulate' the click on the first section
-		this.handleSectionClick('dev');
+		this.handleSectionClick('web');
 
 		// add onNavbarEvent callback on navbar event listeners
 		this.props.navbarListeners.push(this.onNavbarEvent);
@@ -93,14 +93,6 @@ class Realisations extends Component {
 		});
 		this.projectPictures = []
 		this.setProjectPictures(project);
-
-		// apply the active class to the selected project picture
-		let picturesElement = document.getElementById("pictures");
-		let selectedpicture = undefined;
-		if (picturesElement) 
-			selectedpicture = picturesElement.getElementsByTagName('img')
-			
-
 	}
 
 	/**
