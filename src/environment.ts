@@ -17,6 +17,7 @@ import zzcloudTmbl from './assets/img/thumbnail-zzcloud.png'
 import idelizyTmbl from './assets/img/thumbnail-idelizy.png'
 import scanTmbl from './assets/img/thumbnail-scan.png'
 import cdcsTmbl from './assets/img/thumbnail-cdcs.png'
+import anaeeTmbl from './assets/img/thumbnail-anaee.png'
 import soleo2 from './assets/img/web1.png'
 import soleo1 from './assets/img/web2.png'
 import soleo3 from './assets/img/web3.png'
@@ -27,9 +28,13 @@ import cdcs1 from './assets/img/web7.png'
 import cdcs2 from './assets/img/web8.png'
 import cdcs3 from './assets/img/web9.png'
 import cdcs4 from './assets/img/web10.png'
+import anaee1 from './assets/img/web11.png'
+import anaee2 from './assets/img/web12.png'
 import mobile1 from './assets/img/mob1.png'
 import mobile2 from './assets/img/mob2.png'
 import mobile3 from './assets/img/mob3.png'
+import mobile4 from './assets/img/mob4.png'
+import mobile5 from './assets/img/mob5.png'
 
 // global environement variables 
 export const environment: Environment = {
@@ -121,7 +126,7 @@ export const environment: Environment = {
 					projects: [
 						{
 							title: "CDCS",
-							description: "- Depuis Janvier 2019 j’ai eu l’opportunité de partir au États-Unis pour travailler au NIST (National Institute of Standards and Technologies). Il s’agit d’un laboratoire du gouvernement qui mène des travaux de recherches dans des domaines très varier comme la robotique, l’intelligence artificielle, la résistance de matériaux et bien d’autres. J’ai intégré l’équipe CDCS (Configurable Data Curation System) qui maintient une application de stockage et d’échange de données entre différentes équipes de scientifiques à travers le monde. Ce système ne repose pas sur un modèle de donné précis, il est entièrement configurable et s’adapte à chaque domaine scientifique ciblé.",
+							description: "- Depuis Janvier 2019 j’ai eu l’opportunité de partir au États-Unis pour travailler au NIST (National Institute of Standards and Technologies). Il s’agit d’un laboratoire du gouvernement qui mène des travaux de recherches dans des domaines très varier comme la robotique, l’intelligence artificielle, la résistance de matériaux et bien d’autres. J’ai intégré l’équipe CDCS (Configurable Data Curation System) qui maintient une application de stockage et d’échange de données entre différentes équipes de scientifiques à travers le monde. Ce système ne repose pas sur un modèle de donné précis, il est entièrement configurable et s’adapte à chaque domaine scientifique ciblé. Avec l’équipe de développement nous assurions le maintien de l’application, j’ai principalement travaillé sur les implémentations du cœur de l’application en fonction des demandes des clients. J’ai aussi travaillé sur le cycle de release de l’application (script de montée de version, push et tag sur les différents repositories et livraison des package d’application) pour finir j’ai aussi mené à bien plusieurs migrations une première sur les bibliothèques frontend de l’application, et la migration de la base de données MongoDB.",
 							thumbnail: cdcsTmbl,
 							keywords: "Python(Django) - HTML / CSS - JavaScript(JQuery) - MongoDB.",
 							pictures: [
@@ -144,6 +149,24 @@ export const environment: Environment = {
 									title: "COVID-19 Data repository",
 									description: "Exemple d'utilisation du CDCS pour aider dans les recherches contre le COVID-19",
 									source: cdcs4
+								}
+							]
+						},
+						{
+							title: "ANAEE",
+							description: "- Pour clore ma seconde année à l’ISIMA j’ai eu l’opportunité l’intégrer l’INRA (Institut National de la Recherche Agronomique) de Toulouse. Ma mission au sein de l’équipe était d’implémenter une modélisation Mathématique de la concentration de carbone dans le sol et d’intégrer ce modèle a un moteur de simulation (VLE). Une fois cette intégration faite j’ai créé un module Joomla qui exploite l’API REST du moteur de simulation VLE et fait un rendu graphique (tracé de courbes) consultable par la communauté scientifique.",
+							thumbnail: anaeeTmbl,
+							keywords: "C++ - HTML / CSS - JavaScript(JQuery) - Django REST framework - JOOMLA.",
+							pictures: [
+								{
+									title: "Page d'accueil du projet ANAEE",
+									description: "Le projet ANAEE à pour but de regrouper des plateformes de modèlisation afin rendre les recherches plus simple pour les scientifiques.",
+									source: anaee1
+								},
+								{
+									title: "Plateforme de simulation",
+									description: "Ce site regroupe toute les plateformes de simulations, dont celle sur laquelle j'ai travaillé",
+									source: anaee2
 								}
 							]
 						},
@@ -228,33 +251,28 @@ export const environment: Environment = {
 					alt: "mobile section",
 					projects: [
 						{
-							title: "Nulla facilisi",
-							description: "-  Pour ma dernière année à l’ISIMA j’ai eu la chance d’entrer en stage dans l’entreprise CALAO. Cette entreprise crée des solutions mobiles pour adresser des problèmes que rencontre les professionnels. Les secteurs concernés sont très variés (Santé, merchandising …) et cela grâce a un cœur d’application très modulaire. J’ai été lead développeur dans cette équipe pendant 3ans ma mission consistait à architecturer le cœur de l’application, aider les équipes de dev, et gérer la repartissions des taches pour chaque sprint.",
+							title: "CALAOSOFT",
+							description: "-  Pour ma dernière année à l’ISIMA j’ai eu la chance d’entrer en stage dans l’entreprise CALAO. Cette entreprise crée des solutions mobiles pour adresser des problèmes que rencontre les professionnels. Les secteurs concernés sont très variés (Santé, merchandising …) et cela grâce a un cœur d’application très modulaire. J’ai été lead développeur dans cette équipe pendant 3ans ma mission consistait à architecturer le cœur de l’application, aider les équipes de dev, et gérer la repartissions des taches pour chaque sprint. Si vous souhaitez plus d’information à propos des applications mobiles crées par calao vous pouvez visitez le site ( https://www.calaosoft.fr/ ou bien https://www.idelizy.fr/).",
 							thumbnail: idelizyTmbl,
 							keywords: "ANGULAR 2+ - TypeScript - Ionic 4 - HTML / CSS - CouchDB.",
 							pictures: []
 						},
 						{
-							title: "Aliquam erat volutpat",
-							description: "- Stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
+							title: "VitalScan",
+							description: "- Pendant mon temps libre je me suis penché sur un projet d’ORM permettant d’extraire les données d’un type de documents prédéfini (ici une carte vitale). Le projet utilise une expression régulière pour identifier la donnée attendue. Si la donnée scannée correspond à l’expression régulière elle sera envoyée et remplira un formulaire automatiquement. Je voulais voir s’il était possible de fournir ce genre de services plutôt orienté ‘hardware’ dans une application hybride crée avec le framework IONIC. Le résultat a été très concluant et cela en mixant une webview (affichage graphique carte vitale et bouton déclencheur de l’appareil photo) et une vue native (appareil photo + reconnaissance de caractères en temps réel) sur le même écran.",
 							thumbnail: scanTmbl,
 							keywords: "ABBYY - Tesseract OCR Engine - JAVA - TypeScript.",
 							pictures: [
 								{
 									title: "Association Passerelle",
 									description: "Thumbnail passerelle",
-									source: passerelleTmbl
+									source: mobile4
 								},
 								{
-									title: "Soleo",
-									description: "Thumbnail soleo",
-									source: soleoTmbl
-								},
-								{
-									title: "Gestion d'hotel",
-									description: "Thumbnail hotel",
-									source: hotelTmbl
-								},
+									title: "Association Passerelle",
+									description: "Thumbnail passerelle",
+									source: mobile5
+								}
 							]
 						},
 						{
