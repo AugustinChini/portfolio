@@ -21,7 +21,7 @@ class Home extends Component {
 		environment.initConfig.home.sections.forEach((section: Section, index: number) => {
 			let isOdd: boolean = this.isOdd(index);
 			sections.push(
-				<div key={"section_" + index} id={section.anchor} className={"homeSectionContainer " + ( isOdd ? "" : "flexReverse")}>
+				<div key={"section_" + index} id={section.anchor} className={"homeSectionContainer " + (isOdd ? "" : "flexReverse")}>
 					<p>{section.description}</p>
 					<img src={section.picture} alt={section.alt} />
 				</div>
@@ -37,9 +37,9 @@ class Home extends Component {
 	private createLinks(): React.ReactNode {
 		let links: Array<JSX.Element> = [];
 
-		if(environment.initConfig.home.links) {
+		if (environment.initConfig.home.links) {
 			links = environment.initConfig.home.links.map(
-				(link: HomeLink) => <a href={link.url}>{link.icon(this.props)}</a>
+				(link: HomeLink) => <a key={link.url} href={link.url}>{link.icon(this.props)}</a>
 			);
 		}
 
@@ -57,7 +57,7 @@ class Home extends Component {
 
 	public render() {
 		return (
-			<div className="container">
+			<div className="homeContainer">
 				<div className="flexHomeHeader">
 					<img className="homePicture" src={environment.initConfig.home.picture} alt="home laptop" />
 					<div className="mainContainer">
