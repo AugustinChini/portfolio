@@ -18,6 +18,8 @@ import idelizyTmbl from './assets/img/thumbnail-idelizy.png'
 import scanTmbl from './assets/img/thumbnail-scan.png'
 import cdcsTmbl from './assets/img/thumbnail-cdcs.png'
 import anaeeTmbl from './assets/img/thumbnail-anaee.png'
+import imapTmbl from './assets/img/thumbnail-imap.png'
+import tradingTmbl from './assets/img/thumbnail-trading.jpg'
 import soleo2 from './assets/img/web1.png'
 import soleo1 from './assets/img/web2.png'
 import soleo3 from './assets/img/web3.png'
@@ -93,25 +95,25 @@ export const environment: Environment = {
 					picture: mobilePicture,
 					alt: "description de logo",
 					anchor: "mobile",
-					description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam eros dui, mattis vitae lorem in, sodales porttitor massa. Curabitur varius quam mauris, eget pellentesque diam pulvinar nec. Nulla facilisi. "
+					description: "Mes premières expériences dans le monde du travail et mes premiers projets étaient plus orientés vers des technologies Web comme le PHP Angular ou bien en C# avec de l’ASP.NET. Puis un jour j’ai découvert les applications mobiles hybride, et j’ai trouvé que c’était une idée géniale. C’est un domaine qui m’a énormément plus, depuis mes débuts avec AngularJS et Ionic Framework puis Angular et Ionic4. Avec le temps et mes compétences se sont améliorées. J’ai commencé à travailler sur l’interface entre la partie Web et la partie native de mes applications en créant des plugins Ionic native en JAVA et ObjectiveC permettant le dialogue entre la WebView et la partie native du mobile (notamment avec le Bluetooth et un moteur OCR trop complexe à traiter en JavaScript). Puis toujours intéressé par de nouvelles découvertes je travaille sur une application PWA pour mes besoins personnels avec du React."
 				},
 				{
 					picture: laptopCodePicture,
 					anchor: "dev",
 					alt: "description de logo",
-					description: "Consectetur adipiscing elit. Curabitur vitae egestas metus. amet, consectetur adipiscing elit. Curabitur vitae egestas metus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. "
+					description: "Comme dis précédemment dans la section mobile j’adore les technologies Web. J’ai travaillé pendant plus de deux ans avec le Framework Angular. Et réalisé quelques projets en utilisant React et TypeScript. Ces technologies Front-end sont avec le temps devenu mon domaine d’expertise et j’ai occupé le rôle de lead développeur, aidant les équipes à résoudre des problèmes, veillant à la qualité du code et créant une architecture modulable et facile à maintenir. J’ai aussi travaillé sur des projets de simulation en C++ pour l’INRA (Institut National de la Recherche Agronomique) et implémenté un modèle de reconstruction 3D Structure for Motion en C++ avec la bibliothèque CSV."
 				},
 				{
 					picture: databasePicture,
 					anchor: "database",
 					alt: "description de logo",
-					description: "Amet, consectetur adipiscing elit. Curabitur vitae egestas metusUt elementum sed sapien a ornare. Vestibulum sed lectus id ipsum facilisis dictum et vel ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer euismod augue a libero feugiat, nec malesuada urna fermentum. Ut est ipsum, mattis at erat eget, pulvinar co"
+					description: "Après avoir été diplômé j’avais surtout des connaissances dans le domaine des system de gestion de base de données relationnelles, comme MySQL ou SQlite. Mais par la suite dans les projets pour lesquels j’ai travaillé je me suis petit à petit dirigé vers les le NoSQL. Pendant 3ans j’ai travaillé avec CouchDB et PouchDB pour leurs facultés de synchronisation mobile. Cette expérience NoSQL m’a permis de comprendre en profondeur comment un moteur de gestion de données NoSQL fonctionne car sur des plateformes comme les mobiles les ressources sont limitées et impacts très rapidement l’expérience utilisateur. J’ai aussi par la suite beaucoup travaillé avec MongoDB, je me suis chargé d’une migration et des scripts de maintenance du système."
 				},
 				{
 					picture: rj45Picture,
 					anchor: "network",
 					alt: "description de logo",
-					description: "Amet, consectetur adipiscing elit. Curabitur vitae egestas metusUt elementum sed sapien a ornare. Vestibulum sed lectus id ipsum facilisis dictum et vel ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer euismod augue a libero feugiat, nec malesuada urna fermentum. Ut est ipsum, mattis at erat eget, pulvinar co"
+					description: "Le réseau n’est pas mon domaine de prédilection, je l’ai choisi en option lors de mes dernières années d’école d’ingénieur. Afin d’apprendre sur un sujet qui est omniprésent mais que je connaissais si peux. J’ai donc dans le cadre de mon diplôme passé la certification CCNA (1-4). Cela m’a permis de comprendre comment internet et les réseaux locaux fonctionne. Malgré le fait que ce ne soit pas mon axe principal je me sert assez régulièrement des connaissances en réseaux dans mon travail. Ça permet une compréhension pour précise de ce qui se passe lors d’un appel REST par exemple."
 				}
 			]
 		},
@@ -126,13 +128,13 @@ export const environment: Environment = {
 					projects: [
 						{
 							title: "CDCS",
-							description: "- Depuis Janvier 2019 j’ai eu l’opportunité de partir au États-Unis pour travailler au NIST (National Institute of Standards and Technologies). Il s’agit d’un laboratoire du gouvernement qui mène des travaux de recherches dans des domaines très varier comme la robotique, l’intelligence artificielle, la résistance de matériaux et bien d’autres. J’ai intégré l’équipe CDCS (Configurable Data Curation System) qui maintient une application de stockage et d’échange de données entre différentes équipes de scientifiques à travers le monde. Ce système ne repose pas sur un modèle de donné précis, il est entièrement configurable et s’adapte à chaque domaine scientifique ciblé. Avec l’équipe de développement nous assurions le maintien de l’application, j’ai principalement travaillé sur les implémentations du cœur de l’application en fonction des demandes des clients. J’ai aussi travaillé sur le cycle de release de l’application (script de montée de version, push et tag sur les différents repositories et livraison des package d’application) pour finir j’ai aussi mené à bien plusieurs migrations une première sur les bibliothèques frontend de l’application, et la migration de la base de données MongoDB.",
+							description: "- Depuis Janvier 2019 j’ai eu l’opportunité de partir au États-Unis pour travailler au NIST (National Institute of Standards and Technologies). Il s’agit d’un laboratoire du gouvernement qui mène des travaux de recherches dans des domaines très varier comme la robotique, l’intelligence artificielle, la résistance de matériaux et bien d’autres. J’ai intégré l’équipe CDCS (Configurable Data Curation System) qui maintient une application de stockage et d’échange de données entre différentes équipes de scientifiques à travers le monde. Ce système ne repose pas sur un modèle de donné précis, il est entièrement configurable et s’adapte à chaque domaine scientifique ciblé. Avec l’équipe de développement nous assurions le maintien de l’application, j’ai principalement travaillé sur les implémentations du cœur de l’application en fonction des demandes des clients. J’ai aussi travaillé sur le cycle de release de l’application (script de montée de version, push et tag sur les différents repositories et livraison des packages d’application) pour finir j’ai aussi mené à bien plusieurs migrations une première sur les bibliothèques frontend de l’application, et la migration de la base de données MongoDB.",
 							thumbnail: cdcsTmbl,
 							keywords: "Python(Django) - HTML / CSS - JavaScript(JQuery) - MongoDB.",
 							pictures: [
 								{
 									title: "Material Resource Registry",
-									description: "Page d'acuueil d'un site exemple utilisant le coeur CDCS",
+									description: "Page d'accueil d'un site exemple utilisant le coeur CDCS",
 									source: cdcs1
 								},
 								{
@@ -205,13 +207,13 @@ export const environment: Environment = {
 							keywords: "PHP - HTML / CSS - JavaScript(JQuery) - MongoDB.",
 							pictures: [
 								{
-									title: "Soleo",
-									description: "Thumbnail soleo",
+									title: "Page principale",
+									description: "Exemple de discution",
 									source: zzchat1
 								},
 								{
-									title: "Gestion d'hotel",
-									description: "Thumbnail hotel",
+									title: "Page de login",
+									description: "Page de login",
 									source: zzchat2
 								}
 							]
@@ -264,13 +266,13 @@ export const environment: Environment = {
 							keywords: "ABBYY - Tesseract OCR Engine - JAVA - TypeScript.",
 							pictures: [
 								{
-									title: "Association Passerelle",
-									description: "Thumbnail passerelle",
+									title: "Page de test",
+									description: "Resultat d'un scan de carte vital",
 									source: mobile4
 								},
 								{
-									title: "Association Passerelle",
-									description: "Thumbnail passerelle",
+									title: "Scan",
+									description: "Interface de scan, avec zone de capture",
 									source: mobile5
 								}
 							]
@@ -307,27 +309,18 @@ export const environment: Environment = {
 					alt: "reseau section",
 					projects: [
 						{
-							title: "Mon titre 1",
-							description: "- Lors de mon stage de 3 mois dans le carde de mon DUT Services et Réseau de Communication. J'ai créé un site Web pour l'entreprise SOLEO qui est une entreprise de meusure en forage et cavitée. Ce site présente toute la documentation des outils utilisé par l'entreprise ainsi qu'une interface de gestion des clients de l'entreprise (avec stokage de document respectif à chaque client). Ainsi qu'une gestion de contenu par les membres de l'entreprise.",
-							thumbnail: "./assets/img/dev.jpg",
-							keywords: "HTML - CSS - JavaScript(JQuery) - PHP - MySQL.",
-							pictures: [
-								{
-									title: "Gestion d'hotel",
-									description: "Thumbnail hotel",
-									source: hotelTmbl
-								},
-								{
-									title: "Soleo",
-									description: "Thumbnail soleo",
-									source: soleoTmbl
-								},
-								{
-									title: "Association Passerelle",
-									description: "Thumbnail passerelle",
-									source: passerelleTmbl
-								}
-							]
+							title: "IMAP connecteur",
+							description: "- La direction de mon école d’ingénieur avait le projet d’offrir un espace de stockage personnel pour chaque élève. L’école a choisi la solution open source Owncloud pour répondre à cette demande. Le problème qui a vite été soulevé est que cette solution de cloud a son propre système d’authentification. Ce system fait doublon avec la base de données des élèves de mon école, donc deux login différents deux mots de passe diffèrent à retenir pour les élèves. J’ai donc modifié le system d’authentification d’OwnCloud pour qu’il utilise le server IMAP de l’école pour authentifier les élèves de l’école.",
+							thumbnail: imapTmbl,
+							keywords: "PHP - MySQL - Protocole IMAP",
+							pictures: []
+						},
+						{
+							title: "AlgoTrader",
+							description: "- Avec des amis nous nous sommes intéressés au trading et plus particulièrement au trading automatisé. Nous avons donc mise en place une plateforme modulaire offrant des outils facilitant le trading. Comme des alertes en fonction de l’état du marché qui envoi des Web notifications sur nos smartphones. Une interface d’accueil de robot-trading qui opère des transactions d’achat et de ventes. Des tests de stratégies dans le passé avec export des gains théoriques pour éprouver et aider à construire une stratégie efficace. Cette plateforme a été codé en NodeJS en TypeScript avec une base de données MongoDB. Pour le front-end il a été réalisé en React. Le backend NodeJS expose uniquement des end points REST qui sont consommé par le front-end utilisant un authentification JWT.",
+							thumbnail: tradingTmbl,
+							keywords: "NodeJS - MongoDB - React - REST / JWT",
+							pictures: []
 						}
 					]
 				}
@@ -349,46 +342,85 @@ export const environment: Environment = {
 				{
 					title: "Enseignements",
 					htmlContent:
-					`
-						<p>&minus; <strong class="d-inline">2009-2018: </strong>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</p>
-						<p>&minus; <strong class="d-inline">2009-2018: </strong>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
-						<p>&minus; <strong class="d-inline">2009-2018: </strong>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</p>
-						<p>&minus; <strong class="d-inline">2009-2018: </strong>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</p>`
+						`
+						<p>&minus; <strong class="d-inline">2013-2016: </strong>ISIMA Institut Supérieur d'Informatique, de Modélisation et de leurs Applications(63 Clermont-Ferrand).</p>
+						<p>&minus; <strong class="d-inline">2011-2013: </strong>DUT Services et Réseaux de communication(IUT d’Allier, 03 Vichy).</p>
+						<p>&minus; <strong class="d-inline">2008-2011: </strong>Baccalauréat Scientifique, optionScience de l’ingénieur (Lycée Jean MONNET, 15 Aurillac).</p>`
 				},
 				{
 					title: "Expériences professionnelles",
 					htmlContent:
-					`<table class="w-100" style="padding: .3em">
+						`<table class="w-100" style="padding: .3em">
+						<tbody>
+							<tr>
+								<td style="width:100%;" colspan="2">
+									<strong>&minus; Février 2019 : Ingénieur développeur au NIST (National Institute of Standards and Technology).</strong>
+									<small class="ml-1">Maintenance et amélioration du cœur de la plateforme CDCS (The Configurable Data Curation System).</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; Python, Django, JavaScript(jQuery), MongoDB</p>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:50%;border-right:solid 2px #0072d4">
+									<strong>&minus; 2016 - 2019 : Ingénieur développeur W3Plus.</strong>
+									<small class="ml-1">Maintenance et évolution du cœur de la plateforme.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; Couch/PouchDB, Angular, Ionic 2, Gestion de projet (SCRUM)</p>
+								</td>
+								<td style="width:50%">
+									<strong>&minus; Avril - Septembre 2016: Stage W3Plus.</strong>
+									<small class="ml-1">Etude et Réalisation d’une plateforme de création et de gestion d‘applications mobiles modulables.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:50%;border-right:solid 2px #0072d4">
+									<strong>&minus; Avril - Aout 2015 : Stage Institut national de la recherche agronomique.</strong>
+									<small class="ml-1">Création d’un modèle de simulation du taux de carbone dans le sol.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; C++, moteur de simulation VLE</p>
+									<small class="ml-1">Création d’une application permettant la consultation (tracé de courbes) et la personnalisation en ligne de modèles de simulation.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; Joomla, PHP, Web service REST, HTML, CSS, JavaScript (jQuery)</p>
+								</td>
+								<td style="width:50%">
+									<strong>&minus; Avril - Juillet 2013: Stage SOLEO mesure développement.</strong>
+									<small class="ml-1">Design et développement du site web de l’entreprise, et d’une interface de gestion des clients.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; HTML, CSS, JavaScript(jQuery), PHP, MYSQL</p>
+									<small class="ml-1">Réalisation de tous les supports de communication papier(Roll up, brochures ...).</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; Suite Adobe (Photoshop, Illustrator)</p>
+								</td>
+							</tr>
+						</tbody>
+				  </table>
+				  <h3>Projets scolaires :</h3>
+				  <table class="w-100" style="padding: .3em">
 						<tbody>
 							<tr>
 								<td style="width:50%;border-right:solid 2px #0072d4">
-									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+									<strong>&minus; Troisième  année  ISIMA :</strong>
+									<small class="ml-1">Création  d’une  Application hybridede gestion de document sur la solution OwnCloud.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; Ionic, Cordova, AngularJs, Owncloud, PHP</p>
 								</td>
 								<td style="width:50%">
-									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+									<strong>&minus; Deuxièmeannée ISIMA :</strong>
+									<small class="ml-1">Création d’un script de mise à jour de base de données sur OwnCloud pour connexion IMAP.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; PHP, SQLite</p>
 								</td>
 							</tr>
 							<tr>
 								<td style="width:50%;border-right:solid 2px #0072d4">
-									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+									<strong>&minus; Première année ISIMA :</strong>
+									<small class="ml-1">Implémentation de l’algorithme de reconstruction 3D (Structure From Motion). </small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; C++, OpenCV, OpenGL</p>
 								</td>
+								<td style="width:50%;">
+									<strong>&minus; Deuxième année DUT SRC :</strong>
+									<small class="ml-1">Création et design d’un jeu Space Invador.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; Adobe Flash Pro, AS3, Photoshop, Illustrator</p>
+								</td>
+								</tr>
+								<tr>
 								<td style="width:50%">
-									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:50%;border-right:solid 2px #0072d4">
-									<strong>&minus; Feb. 2018: Morbi in sem quis dui placerat ornare.</strong>
-									<small class="ml-1">Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</small>
-									<p class="blue mt-0 ml-1 inter-line"> &rarr; AngularJS, JavaScript, Cordova, Ionic, HTML, C# .NET, WCF</p>
+									<strong>&minus; Première année DUT SRC :</strong>
+									<small class="ml-1">Création et design d’un site web de gestion d’un Hôtel.</small>
+									<p class="blue mt-0 ml-1 inter-line"> &rarr; HTML, CSS, PHP, MySQL, Suite Adobe</p>
 								</td>
 							</tr>
 						</tbody>
@@ -397,48 +429,61 @@ export const environment: Environment = {
 				{
 					title: "Technologies",
 					htmlContent:
-					`<table class="w-100" style="padding: .3em">
+						`<table class="w-100" style="padding: .3em">
 						<tbody>
 							<tr>
-								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
 									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
 									<strong class="d-inline"> HTML / CSS</strong>
 								</td>
-								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
-									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> CouchDB / PouchDB</strong>
 								</td>
-								<td style="width:33%;text-align:center">
-									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
-								</td>
-							</tr>
-							<tr>
-								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
-									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
-								</td>
-								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
-									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
-								</td>
-								<td style="width:33%;text-align:center">
-									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
+								<td style="width:33%;text-align:left">
+								<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> Python / Django</strong>
 								</td>
 							</tr>
 							<tr>
-								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
 									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
+									<strong class="d-inline"> JavaScript</strong>
 								</td>
-								<td style="width:33%;border-right:solid 2px #0072d4;text-align:center">
-									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> MongoDB</strong>
 								</td>
-								<td style="width:33%;text-align:center">
+								<td style="width:33%;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;&#9733;</span>
+									<strong class="d-inline"> JAVA / ANDROID</strong>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
 									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-									<strong class="d-inline"> HTML / CSS</strong>
+									<strong class="d-inline"> Angular</strong>
+								</td>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> C# / .NET</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+								<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> Scripting Bash</strong>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> Ionic 4</strong>
+								</td>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;&#9733;</span>
+									<strong class="d-inline"> React</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<small>Git, TFS, Jenkins, Intellij, VSCode, NodeJS, NPM ...</small>
 								</td>
 							</tr>
 						</tbody>

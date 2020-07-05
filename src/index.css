@@ -67,6 +67,10 @@ code {
     color: #feae17;
 }
 
+.grey{
+    color: #5f5f5f;
+}
+
 .blue {
     color: #0072d4 !important;
 }
@@ -74,6 +78,7 @@ code {
 .orangeBgrd {
     background-color: #feae17;
 }
+
 
 .whiteBgrd {
     background-color: #fff;

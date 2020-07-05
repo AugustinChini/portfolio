@@ -70,9 +70,9 @@
 }
 
 .homeSectionContainer p {
-    margin: 0 0 0 20px;
+    margin: 0 2% 0 2%;
     width: 70%;
-    text-align: center;
+    text-align: justify;
 }
 
 .homeSectionContainer:last-child {
@@ -99,7 +99,7 @@
     .homeSectionContainer p {
         margin: 100px 0 0 20px;
         width: 60%;
-        text-align: center;
+        text-align: justify;
     }
     .homeLinksContainer {
         width: 25%;
