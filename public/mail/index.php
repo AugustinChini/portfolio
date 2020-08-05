@@ -15,7 +15,6 @@ use PHPMailer\PHPMailer\SMTP;
 require './vendor/autoload.php';
 
 // get all the message params
-$subject = htmlspecialchars($_POST["subject"]);
 $body = htmlspecialchars($_POST["body"]);
 $from = htmlspecialchars($_POST["from"]);
 
@@ -59,7 +58,7 @@ $mail->setFrom('xxx.us@gmail.com', 'Portfolio Server');
 $mail->addAddress('xxx@hotmail.fr', 'Augustin CHINI');
 
 //Set the subject line
-$mail->Subject = $subject;
+$mail->Subject = "Message from " . $from;
 
 // Set the body
 $mail->msgHTML('<h3>-------FROM: ' . $from . ' -------</h3><br/><p>' . $body . '</p>');

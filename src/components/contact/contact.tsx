@@ -2,24 +2,44 @@ import React, { Component } from 'react';
 import Modal from "react-responsive-modal";
 import './contact.css';
 import NavBar from '../navBar/navBar';
+import iconValid from '../../assets/img/valid.png'
+import iconError from '../../assets/img/error.png'
 import { AnimationManager } from "../../services/utils";
 import { Link } from '../../model/environment';
 import { NavbarEvent } from '../../model/NavbarEvent';
 import { FaEnvelope } from 'react-icons/fa';
 import { modalSignal } from '../../components/app';
 import { Message } from '../../model/message';
+import { Mailer } from '../../services/mailer';
 
 
 class Contact extends Component<ContactProps> {
-
-    state: any = { isOpen: false };
+    state: { isConfirmOpen: boolean, isOpen: boolean, isSendMailSuccess: boolean, from: string, body: string } = {
+        isOpen: false,
+        isConfirmOpen: false,
+        isSendMailSuccess: true,
+        from: "",
+        body: ""
+    }
     props: any;
     customModalStyles: any = {
         modal: ["modal-container"],
         closeButton: ["modal-close-button"]
     }
-    title: Link = {
+    titleContactModal: Link = {
         label: "Contact",
+        path: "#",
+        type: "none"
+    }
+
+    titleValidationModal: Link = {
+        label: "Effectué",
+        path: "#",
+        type: "none"
+    }
+
+    titleErrorModal: Link = {
+        label: "Erreur",
         path: "#",
         type: "none"
     }
@@ -28,7 +48,7 @@ class Contact extends Component<ContactProps> {
         width: '47px',
         height: '35px',
         marginTop: '5px',
-        color: '#505050' 
+        color: '#505050'
     }
 
     constructor(props: { className: string }) {
@@ -45,8 +65,8 @@ class Contact extends Component<ContactProps> {
         // add onNavbarEvent callback on navbar event listeners
         this.props.navbarListeners.push(this.bottomAnimation);
         // add a listener to the modal signal, if other components want to open the contact modal
-        modalSignal.subscribe((message: Message)=>{
-            if(message && message.code === 100 && message.type === 'open' && message.content === 'contact') {
+        modalSignal.subscribe((message: Message) => {
+            if (message && message.code === 100 && message.type === 'open' && message.content === 'contact') {
                 this.onOpenModal();
             }
         });
@@ -65,9 +85,18 @@ class Contact extends Component<ContactProps> {
      * @param event textarea event
      */
     handleChange(event: any) {
-        this.setState({ value: event.target.value });
+
+        let stateCopy: any = this.state;
+        stateCopy[event.target.id.replace('-field', '')] = event.target.value;
+
+        this.setState(stateCopy);
+
         event.target.style.height = "20px";
         event.target.style.height = (event.target.scrollHeight) + "px";
+
+        // check the fields after the modification to apply the correct classes
+        this.checkFields();
+
     }
 
     /**
@@ -75,24 +104,93 @@ class Contact extends Component<ContactProps> {
      * @param event Submit event
      */
     handleSubmit(event: any) {
-        alert('Un essai a été envoyé : ' + this.state.value);
+
+        if (this.checkFields()) {
+
+            let submitElement: HTMLInputElement = document.getElementById("form-submit") as HTMLInputElement;
+            if (submitElement) {
+                submitElement.disabled = true;
+                submitElement.value = "Veuillez patienter ...";
+            }
+
+            Mailer.send(this.state.from, this.state.body)
+                .then(() => {
+                    this.setState({
+                        ...this.state,
+                        isOpen: false,
+                        isConfirmOpen: true,
+                        isSendMailSuccess: true
+                    })
+                }, () => {
+                    this.setState({
+                        ...this.state,
+                        isOpen: false,
+                        isConfirmOpen: true,
+                        isSendMailSuccess: false
+                    })
+                });
+        }
+
         event.preventDefault();
     }
 
+    /**
+     * Check all the form fields apply the error css class if needed
+     * @returns {boolean} True if the form is valid
+     */
+    checkFields = (): boolean => {
+        if (this.state.from !== "" && this.state.body !== "") {
+            let inputField = document.getElementById("body-field");
+            if (inputField)
+                inputField.classList.remove("error-input");
+            inputField = document.getElementById("from-field");
+            if (inputField)
+                inputField.classList.remove("error-input");
+
+            return true;
+        } else if (this.state.body === "" && this.state.from === "") {
+            let inputField = document.getElementById("body-field");
+            if (inputField)
+                inputField.classList.add("error-input");
+            inputField = document.getElementById("from-field");
+            if (inputField)
+                inputField.classList.add("error-input");
+        }
+        else if (this.state.body === "") {
+            let inputField = document.getElementById("body-field");
+            if (inputField)
+                inputField.classList.add("error-input");
+        } else if (this.state.from === "") {
+            let inputField = document.getElementById("from-field");
+            if (inputField)
+                inputField.classList.add("error-input");
+        }
+
+        return false;
+    }
+
     onOpenModal = () => {
-        this.setState({ isOpen: true });
+        this.setState({ ...this.state, isOpen: true });
     };
 
     onCloseModal = () => {
-        this.setState({ isOpen: false });
+        this.setState({ ...this.state, isOpen: false });
+    };
+
+    onCloseConfirmModal = () => {
+        this.setState({ ...this.state, isConfirmOpen: false });
+    };
+
+    onOpenConfirmModal = () => {
+        this.setState({ ...this.state, isConfirmOpen: true });
     };
 
     /**
      * Return the rendered navbar if needed
      */
-    renderNavbar() {
-        if (this.state.isOpen)
-            return <NavBar style={{ position: "relative", overflow: "hidden" }} showHomeLink={false} data={[this.title]} />
+    renderNavbar(link: Link) {
+        if (this.state.isOpen || this.state.isConfirmOpen)
+            return <NavBar style={{ position: "relative", overflow: "hidden" }} showHomeLink={false} data={[link]} />
         else
             return undefined
     }
@@ -150,20 +248,35 @@ class Contact extends Component<ContactProps> {
                     <FaEnvelope style={this.microAnimationCustomInlineStyle} />
                 </span>
                 <Modal open={this.state.isOpen} onClose={this.onCloseModal} classNames={this.customModalStyles}>
-                    {this.renderNavbar()}
+                    {this.renderNavbar(this.titleContactModal)}
                     <p className="contact-description">Vous pouvez me joindre a l'adresse suivante: <a href="mailto:augustin.chini@hotmail.fr" target="_top">augustin.chini@hotmail.fr</a>. Ou bien remplir le formulaire suivant:</p>
                     <br />
                     <form className="form-style" onSubmit={this.handleSubmit}>
                         <label>
-                            <input type="email"></input>
+                            <input id="from-field" type="email" onChange={this.handleChange}></input>
                             <span>Email:</span>
                         </label>
                         <label>
-                            <textarea value={this.state.value} onChange={this.handleChange}></textarea>
+                            <textarea id="body-field" onChange={this.handleChange}></textarea>
                             <span>Message:</span>
                         </label>
-                        <input type="submit" value="Envoyer" />
+                        <input id="form-submit" type="submit" value="Envoyer" />
                     </form>
+                </Modal>
+                <Modal open={this.state.isConfirmOpen} onClose={this.onCloseConfirmModal} classNames={this.customModalStyles}>
+                    {this.renderNavbar(this.state.isSendMailSuccess ? this.titleValidationModal : this.titleErrorModal)}
+                    <div className="body-container">
+                        <img alt="Validation Ok" src={this.state.isSendMailSuccess ? iconValid : iconError}></img>
+                        <br />
+                        <p className="contact-description">
+                            {
+                                this.state.isSendMailSuccess ?
+                                    <span>Votre message a bien été envoyé, je vous repond vite <span role="img" aria-label="nerd emoji">🤓</span></span> :
+                                    <span>Hum <span role="img" aria-label="thoughtful emoji">🤔</span> ... il semblerait qu'il y ait une erreur avec mon serveur mail, j'en suis désolé. Vous pouvez toujours me joindre <a href="mailto:augustin.chini@hotmail.fr" target="_top">ICI</a>.</span>
+                            }
+                        </p>
+                        <button type="button" onClick={this.onCloseConfirmModal}>Fermer</button>
+                    </div>
                 </Modal>
             </div>
         );
