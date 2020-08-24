@@ -95,19 +95,19 @@ export const environment: Environment = {
 					picture: mobilePicture,
 					alt: "description de logo",
 					anchor: "mobile",
-					description: "Mes premières expériences dans le monde du travail et mes premiers projets étaient plus orientés vers des technologies Web comme le PHP Angular ou bien en C# avec de l’ASP.NET. Puis un jour j’ai découvert les applications mobiles hybrides, et j’ai trouvé que c’était une idée géniale. C’est un domaine qui m’a énormément plu, depuis mes débuts avec AngularJS et Ionic Framework puis Angular et Ionic4. Avec le temps mes compétences se sont améliorées. J’ai commencé à travailler sur l’interface entre la partie Web et la partie native de mes applications en créant des plugins Ionic native en JAVA et ObjectiveC permettant le dialogue entre la WebView et la partie native du mobile (notamment avec le Bluetooth et un moteur OCR trop complexe à traiter en JavaScript). Puis toujours intéressé par de nouvelles découvertes je travaille sur une application PWA pour mes besoins personnels avec du React."
+					description: "Mes premières expériences dans le monde du travail et mes premiers projets étaient plus orientés vers des technologies Web comme le PHP Angular ou bien en C# avec de l’ASP.NET. Puis un jour j’ai découvert les applications mobiles hybrides, et j’ai trouvé que c’était une idée géniale. C’est un domaine qui m’a énormément plu, depuis mes débuts avec AngularJS et Ionic Framework puis Angular et Ionic4. Avec le temps mes compétences se sont améliorées. J’ai commencé à travailler sur l’interfacage entre la partie Web et la partie native de mes applications en créant des plugins Ionic native en JAVA et ObjectiveC. Puis toujours intéressé par de nouvelles découvertes je travaille sur une application PWA pour mes besoins personnels avec du React."
 				},
 				{
 					picture: laptopCodePicture,
 					anchor: "dev",
 					alt: "description de logo",
-					description: "Comme dit précédemment dans la section mobile j’adore les technologies Web. J’ai travaillé pendant plus de deux ans avec le Framework Angular, et réalisé quelques projets en utilisant React et TypeScript. Ces technologies Front-end sont avec le temps devenues mon domaine d’expertise et j’ai occupé le rôle de lead développeur, aidant les équipes à résoudre des problèmes, veillant à la qualité du code et créant une architecture modulable et facile à maintenir. J’ai aussi travaillé sur des projets de simulation en C++ pour l’INRA (Institut National de la Recherche Agronomique) et implémenté un modèle de reconstruction 3D Structure for Motion en C++ avec la bibliothèque CSV."
+					description: "J’ai travaillé pendant plus de deux ans avec le Framework Angular, et réalisé quelques projets en utilisant React et TypeScript. J’ai occupé le rôle de lead développeur, aidant les équipes à résoudre des problèmes, veillant à la qualité du code et créant une architecture modulable et facile à maintenir. J’ai aussi travaillé sur des projets de simulation en C++ pour l’INRA (Institut National de la Recherche Agronomique) et implémenté un modèle de reconstruction 3D Structure for Motion en C++ avec la bibliothèque CSV."
 				},
 				{
 					picture: databasePicture,
 					anchor: "database",
 					alt: "description de logo",
-					description: "Après avoir été diplômé j’avais surtout des connaissances dans le domaine des systèmes de gestion de base de données relationnelles, comme MySQL ou SQlite. Mais par la suite dans les projets pour lesquels j’ai travaillé je me suis petit à petit dirigé vers les le NoSQL. Pendant 3 ans j’ai travaillé avec CouchDB et PouchDB pour leurs facultés de synchronisation mobile. Cette expérience NoSQL m’a permis de comprendre en profondeur comment un moteur de gestion de données NoSQL fonctionne car sur des plateformes comme les mobiles, les ressources sont limitées et impactent très rapidement l’expérience utilisateur. J’ai aussi par la suite beaucoup travaillé avec MongoDB, je me suis chargé d’une migration et des scripts de maintenance du système."
+					description: "Après avoir été diplômé j’avais surtout des connaissances dans le domaine des systèmes de gestion de base de données relationnelles, comme MySQL ou SQlite. Mais par la suite je me suis petit à petit dirigé vers le NoSQL. Pendant 3 ans j’ai travaillé avec CouchDB et PouchDB pour leurs facultés de synchronisation et leur base de données embarqué. Cette expérience NoSQL m’a permis de comprendre en profondeur comment un moteur de gestion de données NoSQL fonctionne car sur des plateformes comme les mobiles, les ressources sont limitées et impactent très rapidement l’expérience utilisateur. J’ai aussi par la suite beaucoup travaillé avec MongoDB, je me suis chargé d’une migration de données et des scripts de maintenance du système."
 				},
 				{
 					picture: rj45Picture,
@@ -330,13 +330,13 @@ export const environment: Environment = {
 			title: "Augustin CHINI",
 			subtitle: "Eleve ingénieur",
 			email: "augustin.chini@achini.fr",
-			phone: "(+33) 665 12 34 56",
+			phone: "(+33)6 65 12 34 56",
 			localisation: {
 				name: "Gaithersburg, MD (USA)",
 				url: "https://www.google.com/maps/place/Gaithersburg,+Maryland"
 			},
-			website: "http://achini.fr",
-			downloadLink: "./assets/downloads/Curriculum_vitae_V3.1_FR.pdf",
+			website: "https://achini.fr",
+			downloadLink: "./assets/downloads/CV_CHINI_AUGUSTIN_V3.2_FR.pdf",
 			description: "",
 			sections: [
 				{
@@ -433,14 +433,14 @@ export const environment: Environment = {
                                     <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                                     <strong class="d-inline"> HTML / CSS</strong>
                                 </td>
-                                <td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
                                     <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
-                                    <strong class="d-inline"> CouchDB / PouchDB</strong>
+                                    <strong class="d-inline"> React</strong>
                                 </td>
-                                <td style="width:33%;text-align:left">
-                                <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
-                                    <strong class="d-inline"> Python / Django</strong>
-                                </td>
+								<td style="width:33%;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> MongoDB</strong>
+								</td>
                             </tr>
                             <tr>
                                 <td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
@@ -448,13 +448,13 @@ export const environment: Environment = {
                                     <strong class="d-inline"> JavaScript</strong>
                                 </td>
                                 <td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
-                                    <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
-                                    <strong class="d-inline"> MongoDB</strong>
-                                </td>
-                                <td style="width:33%;text-align:left">
-                                    <span class="d-inline orange">&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;&#9733;</span>
-                                    <strong class="d-inline"> JAVA / ANDROID</strong>
-                                </td>
+                                <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+                                    <strong class="d-inline"> Python / Django</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> CouchDB / PouchDB</strong>
+								</td>
                             </tr>
                             <tr>
                                 <td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
@@ -466,8 +466,8 @@ export const environment: Environment = {
                                     <strong class="d-inline"> C# / .NET</strong>
                                 </td>
                                 <td style="width:33%;text-align:left">
-                                <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
-                                    <strong class="d-inline"> Scripting Bash</strong>
+                                	<span class="d-inline orange">&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;&#9733;</span>
+                                    <strong class="d-inline"> SQLite / MySQL</strong>
                                 </td>
                             </tr>
                             <tr>
@@ -475,14 +475,54 @@ export const environment: Environment = {
                                     <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
                                     <strong class="d-inline"> Ionic 4</strong>
                                 </td>
-                                <td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
-                                    <span class="d-inline orange">&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;&#9733;</span>
-                                    <strong class="d-inline"> React</strong>
-                                </td>
                                 <td style="width:33%;text-align:left">
-                                    <small>Git, TFS, Jenkins, Intellij, VSCode, NodeJS, NPM ...</small>
+                                    <span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+                                    <strong class="d-inline"> JAVA / ANDROID</strong>
+								</td>
+                                <td>
                                 </td>
-                            </tr>
+							</tr>
+							<tr>
+								<td></td>
+							</tr>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> NodeJS / NPM</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<strong class="d-inline"> Langue : </strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<small class="d-inline"> Gerrit, Jenkins, Travis CI</small>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+								<span class="d-inline orange">&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;&#9733;</span>
+									<strong class="d-inline"> Réseau (CCNA)</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> Anglais (TOEIC 770)</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<small class="d-inline"> Git, TFS, GitLab</small>
+								</td>
+							</tr>
+							<tr>
+								<td style="width:33%;border-right:solid 2px #0072d4;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;&#9733;&#9733;</span><span class="d-inline grey">&#9733;</span>
+									<strong class="d-inline"> Scripting Linux</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<span class="d-inline orange">&#9733;&#9733;</span><span class="d-inline grey">&#9733;&#9733;&#9733;</span>
+									<strong class="d-inline"> Espagnol (B1)</strong>
+								</td>
+								<td style="width:33%;text-align:left">
+									<small class="d-inline"> VSCode, Intellij ...</small>
+								</td>
+							</tr>
                         </tbody>
                   </table>`
 				}

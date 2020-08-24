@@ -54,6 +54,7 @@ class Footer extends Component {
                     <div className="signatureContainer">
                         <p>Créé par</p>
                         <div className="signature">Augustin CHINI</div>
+                        <div>v1.0.1</div>
                     </div>
                 </div>
             </div>

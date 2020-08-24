@@ -1,6 +1,6 @@
 {
     "name": "portfolio",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "private": true,
     "dependencies": {
         "@types/dompurify": "^2.0.0",
@@ -22,7 +22,7 @@
         "react-image-gallery": "^1.0.6",
         "react-responsive-modal": "^4.0.1",
         "react-router-dom": "^5.0.1",
-        "react-scripts": "^3.3.1",
+        "react-scripts": "^3.4.3",
         "trianglify": "^2.0.0",
         "typescript": "^3.8.3",
         "underscore": "^1.9.1",
